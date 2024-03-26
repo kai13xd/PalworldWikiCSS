@@ -1,0 +1,19 @@
+/*====[ Localization ]====================================================================
+    Notes: 
+        These selectors are meant for switching the font-family for non-English text.
+========================================================================================*/
+#ja {
+    font-family: var(--font-family-japanese);
+}
+
+#ko {
+    font-family: var(--font-family-korean);
+}
+
+#zh-Hant {
+    font-family: var(--font-family-traditional-chinese);
+}
+
+#zh-Hans {
+    font-family: var(--font-family-simplified-chinese);
+}

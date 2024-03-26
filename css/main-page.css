@@ -1,0 +1,272 @@
+/*==============================================================================
+    Main Page
+==============================================================================*/
+#The_Palworld_Wiki {
+    font-size: 2.5rem;
+    line-height: normal;
+    margin-bottom: 0;
+}
+
+#mp-welcome>h1 {
+    margin: 0;
+    border: 0;
+}
+
+.page-Palworld_Wiki .mw-parser-output {
+    display: flex;
+    column-gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.mainpage-left {
+    flex: 60;
+}
+
+.mainpage-right {
+    flex: 40;
+}
+
+.page-Palworld_Wiki .mw-parser-output .gallery {
+    text-align: center;
+    margin: 10px 0;
+}
+
+#mp-links {
+    grid-area: links;
+
+    &>:last-child::after {
+        content: "";
+        display: block;
+        height: 100px;
+        width: 100%;
+        background-image: url("//palworld.wiki.gg/images/c/c0/Anubis_render.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH"
+    }
+}
+
+#mp-info .mp-content {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+#mp-info {
+    grid-area: info
+}
+
+#mp-news {
+    grid-area: news
+}
+
+#mp-about {
+    grid-area: about;
+
+    img {
+        height: 100%;
+        width: 100%
+    }
+}
+
+#mp-contribute {
+    grid-area: contribute;
+
+    .mp-lists::after {
+        content: "";
+        max-width: 250px;
+        width: 50%;
+        background-image: url("//palworld.wiki.gg/images/e/e3/Grizzbolt_render.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: left center
+    }
+}
+
+#mp-welcome {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-around;
+    padding: 0 0%;
+    /* background-image: url("//palworld.wiki.gg/images/0/0a/Nitewing_render.png"), url("//palworld.wiki.gg/images/5/5b/Faleris_render.png"); */
+    background-repeat: no-repeat;
+    background-position: left top, right top;
+    background-size: auto 70%;
+
+    @media (max-width:768px) {
+        background-size: 20% auto, 20% auto
+    }
+}
+
+.mp-box {
+    .mp-header {
+        text-align: center;
+        margin-top: 0;
+        background: var(--background-triangle-double);
+        background-color: var(--theme-triangle-header-background-color);
+        background-size: contain;
+        background-blend-mode: overlay;
+        border-radius: var(--theme-border-radius-inner);
+        border: 0;
+    }
+}
+
+#mp-links {
+    flex: 1 1;
+    flex-basis: 300px
+}
+
+.mp-lists {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1rem;
+
+    @media (max-width:768px) {
+        flex-direction: column
+    }
+}
+
+.mp-list {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    h4 {
+        border-image-source: var(--background-title);
+        border-image-slice: 6 fill;
+        border-image-width: 6px;
+        margin: 0 0 10px 0;
+        padding: 0 10px;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mp-list.pals {
+        flex: 2;
+        min-width: 250px;
+    }
+}
+
+.mp-infolist {
+    flex: 3;
+    display: flex;
+
+    ul {
+        width: 100%;
+        display: grid;
+        gap: 5px;
+        grid-template-areas: "a b c";
+        grid-template-columns: repeat(3, minmax(0, 1fr))
+    }
+}
+
+/***********************************************************************************************************
+   Template:FP This pertains to the Main Page elements (Front Page)
+ ***********************************************************************************************************/
+.fplinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    text-align: center;
+    gap: 0.375em;
+
+    /* font-size: 0.925rem; */
+    &>* {
+        flex: 1 0 calc(25% - 0.5em);
+    }
+}
+
+.fplink-outer {
+    min-width: fit-content;
+}
+
+/* .fplink-wide {
+    flex-basis: calc(33% - 10px);
+    width: calc(33% - 15px);
+} */
+/* .fplink-fullwidth {
+    flex-basis: 100%;
+    width: calc(100% - 15px);
+    font-weight: bold;
+} */
+/* .fplink-plain {
+    background: transparent;
+    border-radius: 0;
+    border: 0;
+    box-shadow: none;
+} */
+.fplink-inner {
+    display: table-row;
+}
+
+.fplink {
+    display: table;
+    box-sizing: border-box;
+    padding: 0.325em;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.2s;
+    box-shadow: var(--theme-button-box-shadow);
+    font-size: 0.9375rem;
+
+    &:not(.fplink-plain) {
+        background: var(--theme-accent-color-30);
+        border-radius: var(--theme-border-radius-inner);
+    }
+
+    &:hover {
+        background-color: var(--theme-accent-color-35);
+    }
+
+    a {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    img {
+        max-width: 150px;
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Auto-resize front page video to fit smaller columns */
+.fpbox .embedvideowrap {
+    width: 100% !important;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.fpbox .embedvideowrap iframe {
+    width: 100% !important;
+}
+
+.fplink-fullwidth .fplink:not(.fplink-plain) {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.linkslabel {
+    border-bottom: 2px solid #505050;
+}
+
+.mw-inputbox-createbox:required:invalid~.mw-ui-button {
+    background-color: var(--theme-navbar-tab-background);
+    margin-top: 1rem;
+}

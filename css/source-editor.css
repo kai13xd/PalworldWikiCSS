@@ -1,0 +1,179 @@
+/*====[ Source Editor ]=========================================================================
+    Notes: 
+        None
+========================================================================================*/
+.wikiEditor-ui .wikiEditor-ui-view {
+    border: 0;
+    border-radius: var(--theme-border-radius-inner);
+    overflow: clip;
+}
+
+.wikiEditor-ui .wikiEditor-ui-top {
+    border-bottom: 0;
+}
+
+.wikiEditor-ui-toolbar .tabs span.tab a {
+    color: var(--theme-link-color);
+}
+
+:root {
+    --codemirror-pagename-color: oklch(70% 0.1828 207.8);
+    --codemirror-template-color: oklch(70% 0.1425 307.06);
+    --codemirror-template-name-color: oklch(70% 0.1762 318.87);
+}
+
+.cm-mw-link-pagename,
+.cm-mw-link-bracket,
+.cm-mw-link-delimiter,
+.cm-mw-extlink,
+.cm-mw-free-extlink {
+    color: var(--codemirror-pagename-color);
+    font-weight: 400;
+}
+
+.cm-mw-template {
+    color: var(--codemirror-template-color);
+    font-weight: 400;
+}
+
+.cm-mw-template-name,
+.cm-mw-template-argument-name,
+.cm-mw-template-delimiter,
+.cm-mw-template-bracket {
+    color: var(--codemirror-template-name-color);
+    font-weight: 400;
+}
+
+.cm-mw-link,
+.cm-mw-section-header {
+    color: oklch(60% 0.163 148.85);
+    font-weight: normal;
+}
+
+.cm-mw-link-tosection,
+.cm-null {
+    color: oklch(80% 0.163 148.85);
+    font-weight: 800;
+}
+
+.cm-mw-exttag-bracket,
+.cm-mw-exttag-attribute,
+.cm-mw-htmltag-bracket,
+.cm-mw-htmltag-attribute {
+    color: oklch(70% 0.1674 175.26);
+    font-weight: 800;
+}
+
+.cm-mw-list,
+.cm-mw-indenting {
+    color: oklch(70% 0.173 253.79);
+    font-weight: bold;
+}
+
+.cm-mw-exttag-name,
+.cm-mw-htmltag-name {
+    color: oklch(70% 0.1674 175.26);
+}
+
+.cm-mw-doubleUnderscore,
+.cm-mw-signature,
+.cm-mw-hr {
+    color: oklch(80% 0.1114 197.09);
+    font-weight: 900;
+    background-color: #0000;
+}
+
+.cm-mw-parserfunction-name,
+.cm-mw-parserfunction-bracket,
+.cm-mw-parserfunction-delimiter {
+    color: oklch(70% 0.2437 20.2);
+    font-weight: bold;
+}
+
+.wikiEditor-ui .CodeMirror {
+    background-color: var(--theme-accent-color-20);
+    color: var(--theme-text-color);
+    font-size: 1rem !important;
+    padding: 0;
+}
+
+.wikiEditor-ui-toolbar {
+    background-color: var(--theme-accent-color-35);
+}
+
+#msupload-div {
+    background-color: var(--theme-accent-color-30);
+    border-top: 0;
+}
+
+#msupload-dropzone {
+    margin: 0px;
+    padding: 1rem;
+    border: 0;
+    text-align: center;
+    height: auto;
+    color: var(--theme-text-color);
+}
+
+.wikiEditor-ui-toolbar .sections .section {
+    border-top: 0;
+    background-color: var(--theme-accent-color-35);
+}
+
+#editform>.editOptions {
+    border: 0;
+    border-radius: var(--theme-border-radius-inner);
+    color: #fff;
+    margin-top: 2em;
+    background-color: var(--theme-accent-color-40);
+}
+
+#editform {
+
+    .current,
+    .label {
+        color: var(--theme-text-color);
+    }
+}
+
+.CodeMirror-gutters {
+    background-color: var(--theme-accent-color-25);
+    border-right: 0;
+}
+
+div.CodeMirror-gutter-elt {}
+
+.wikiEditor-ui-toolbar .booklet>.index>.current {
+    background-color: var(--theme-accent-color-45);
+}
+
+.wikiEditor-ui-toolbar .page-table th {
+    color: var(--theme-text-color);
+}
+
+.wikiEditor-ui-toolbar .page-table td {
+    color: var(--theme-text-color);
+}
+
+.wikiEditor-ui-toolbar .page-characters div span {
+    color: var(--theme-text-color);
+    border: 0;
+}
+
+::spelling-error {
+    text-decoration: wavy rgb(228, 117, 141) underline;
+}
+
+.CodeMirror {
+    font-family: var(--font-family-monospace);
+    caret-color: white;
+
+    .CodeMirror-linenumber {
+        color: var(--theme-text-color);
+    }
+
+    pre.CodeMirror-line {
+        font-size: 0.875rem;
+        line-height: normal;
+    }
+}

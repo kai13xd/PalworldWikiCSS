@@ -1,0 +1,211 @@
+/*====[ Template CSS ]====================================================================
+    Notes: 
+        None
+========================================================================================*/
+:root {
+    --background-rarity: url("//palworld.wiki.gg/images/2/26/Background_Rarity.png");
+}
+
+/* Infoicons */
+.infoicon {
+    white-space: nowrap;
+
+    img {
+        margin-bottom: 2px;
+        margin-right: 4px;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+        width: auto;
+        height: auto;
+        max-height: 1.5rem;
+        max-width: 1.5rem;
+        /* make icons pop a bit more?*/
+        filter: drop-shadow(0px 0px 6px #0008);
+    }
+}
+
+[class^="rarity-"] {
+    border-image-source: var(--background-rarity);
+    border-image-slice: 6 fill;
+    border-image-width: 6px;
+    padding: 0 10px;
+    margin: 0 3px;
+    background-color: rgba(255, 255, 255, .2);
+    color: #fff;
+}
+
+.rarity-uncommon {
+    filter: invert(61%) sepia(28%) saturate(6614%) hue-rotate(62deg) brightness(128%) contrast(109%);
+}
+
+.rarity-rare {
+    filter: invert(51%) sepia(60%) saturate(5325%) hue-rotate(182deg) brightness(105%) contrast(105%);
+}
+
+.rarity-epic {
+    filter: invert(21%) sepia(80%) saturate(6368%) hue-rotate(241deg) brightness(93%) contrast(176%);
+}
+
+.rarity-legendary {
+    filter: invert(75%) sepia(60%) saturate(3761%) hue-rotate(43deg) brightness(144%) contrast(96%);
+}
+
+[class^="ele-"]>a {
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 67px;
+    padding: 3px 0 3px 37px;
+    margin: 0 3px;
+    color: #fff;
+}
+
+.ele-dark>a {
+    background-image: url("//palworld.wiki.gg/images/3/30/Background_Dark.png");
+}
+
+.ele-dragon>a {
+    background-image: url("//palworld.wiki.gg/images/3/35/Background_Dragon.png");
+}
+
+.ele-electric>a {
+    background-image: url("//palworld.wiki.gg/images/b/ba/Background_Electric.png");
+}
+
+.ele-fire>a {
+    background-image: url("//palworld.wiki.gg/images/4/41/Background_Fire.png");
+}
+
+.ele-grass>a {
+    background-image: url("//palworld.wiki.gg/images/d/df/Background_Grass.png");
+}
+
+.ele-ground>a {
+    background-image: url("//palworld.wiki.gg/images/f/f9/Background_Ground.png");
+}
+
+.ele-ice>a {
+    background-image: url("//palworld.wiki.gg/images/9/9e/Background_Ice.png");
+}
+
+.ele-neutral>a {
+    background-image: url("//palworld.wiki.gg/images/3/31/Background_Neutral.png");
+}
+
+.ele-water>a {
+    background-image: url("//palworld.wiki.gg/images/6/6f/Background_Water.png");
+}
+
+.foodicons img {
+    width: 18px;
+    height: auto;
+}
+
+[class^="passive-skill-"]>a {
+    border-image-source: var(--background-title);
+    border-image-slice: 6 fill;
+    border-image-width: 6px;
+    margin: 0 0 10px;
+    padding: 2px 30px 2px 10px;
+    background-position: right 5px center;
+    background-repeat: no-repeat;
+    background-size: auto 16px;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.passive-skill-pos3>a,
+.passive-skill-pos2>a {
+    filter: brightness(0) saturate(100%) invert(79%) sepia(68%) saturate(1602%) hue-rotate(1deg) brightness(104%) contrast(109%);
+    box-shadow: 0 0 5px 1px #FFDD00;
+}
+
+.passive-skill-pos3>a {
+    background-image: url("//palworld.wiki.gg/images/5/50/Passive_Positive_3_icon.png");
+}
+
+.passive-skill-pos2>a {
+    background-image: url("//palworld.wiki.gg/images/6/63/Passive_Positive_2_icon.png");
+}
+
+.passive-skill-pos1>a {
+    background-image: url("//palworld.wiki.gg/images/b/bd/Passive_Positive_1_icon.png");
+}
+
+.passive-skill-neg1>a,
+.passive-skill-neg2>a,
+.passive-skill-neg3>a {
+    filter: brightness(0) saturate(100%) invert(27%) sepia(96%) saturate(1627%) hue-rotate(338deg) brightness(105%) contrast(94%);
+}
+
+.passive-skill-neg1>a {
+    background-image: url("//palworld.wiki.gg/images/b/be/Passive_Negative_1_icon.png");
+}
+
+.passive-skill-neg2>a {
+    background-image: url("//palworld.wiki.gg/images/b/bb/Passive_Negative_2_icon.png");
+}
+
+.passive-skill-neg3>a {
+    background-image: url("//palworld.wiki.gg/images/a/a2/Passive_Negative_3_icon.png");
+}
+
+/* Item Infobox */
+div[class^="item-"] {
+    margin: -5px -10px !important;
+    position: relative;
+}
+
+/* Image backgrounds applied to div text-align:center for aligning images to center */
+.item-common {
+    text-align: center;
+    background: conic-gradient(from 42deg, #030a0e 0deg, #030a0e 90deg, #030a0e 184deg, #0b1216 184deg, #0b1216 270deg, #0b1216 360deg);
+}
+
+.item-uncommon {
+    text-align: center;
+    background: conic-gradient(from 42deg, #0f2515 0deg, #1c421d 90deg, #1c411d 184deg, #204322 184deg, #162c1c 270deg, #162b1c 360deg);
+}
+
+.item-rare {
+    text-align: center;
+    background: conic-gradient(from 42deg, #024057 0deg, #016488 90deg, #026285 184deg, #056689 184deg, #08465d 270deg, #08455c 360deg);
+}
+
+.item-epic {
+    text-align: center;
+    background: conic-gradient(from 42deg, #44235b 0deg, #6b308b 90deg, #682f88 184deg, #70388f 184deg, #4c2963 270deg, #492960 360deg);
+}
+
+.item-legendary {
+    text-align: center;
+    background: conic-gradient(from 42deg, #54490e 0deg, #75620b 90deg, #806a0a 184deg, #856f0e 184deg, #645612 270deg, #594e13 360deg);
+}
+
+.palitem {
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 100px;
+    height: 100px;
+    border-style: solid;
+    border-width: 2px 2px 0 2px;
+    border-color: #85afb2 #85afb2 transparent #85afb2;
+    background: #4b5859;
+}
+
+.palitem img {
+    width: 100px;
+    height: 100px;
+}
+
+.palitem::after {
+    position: relative;
+    display: block;
+    bottom: 23px;
+    left: -2px;
+    width: 104px;
+    content: '';
+    border-bottom: 40px solid;
+    border-image: url("//palworld.wiki.gg/images/3/34/Pal_Item_Border.png") 0 0 100% 0 stretch;
+}

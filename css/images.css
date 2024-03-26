@@ -1,0 +1,42 @@
+/*====[ Images & Thumbnails ]====================================================================
+    Notes: 
+        None
+========================================================================================*/
+.thumb {
+    border: 0;
+
+    .thumbinner {
+        background-color: transparent;
+        padding: 1rem;
+        border: 0;
+        border-radius: 5px;
+    }
+}
+
+.thumbimage {
+    border-radius: 4px;
+    border: 0;
+    box-shadow: var(--theme-box-shadow);
+    background-color: #0b0029;
+}
+
+.thumbcaption {
+    font-size: 0.875rem;
+}
+
+li.gallerybox div.thumb {
+    border-radius: 5px;
+}
+
+.gallery * {
+    box-sizing: initial;
+}
+
+.mw-gallery-traditional .thumb {
+    display: flex;
+    background: none;
+}
+
+.mw-gallery-traditional .thumb a {
+    display: block;
+}

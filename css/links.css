@@ -1,0 +1,262 @@
+/*====[ 🔗 Links 🔗 ]==========================================================
+ Notes: 
+   Placing the a in front of :link, :visited, etc is redundant, however it adds
+   to the selector specificity.
+================================================================================*/
+:root {
+    --theme-link-font-weight: 400;
+    /*====[ Link Text Colors ]====================================*/
+    --theme-link-color: oklch(0.80 0.1839 193.24);
+    --theme-link-hover-color: oklch(0.92 0.1447 193);
+    --theme-link-active-color: oklch(0.92 0.16 108.43);
+    --theme-link-focus-color: var(--theme-link-active-color);
+    /*====[ Visited Link Text Colors ]============================*/
+    --theme-link-visited-color: var(--theme-link-color);
+    --theme-link-visited-hover-color: var(--theme-link-active-color);
+    --theme-link-visited-active-color: var(--theme-link-hover-color);
+    --theme-link-visited-focus-color: var(--theme-link-focus-color);
+    /*====[ External Link Text Colors ]============================*/
+    --theme-link-external-color: oklch(0.80 0.20 152);
+    --theme-link-external-hover-color: oklch(0.92 0.25 150);
+    --theme-link-external-active-color: var(--theme-link-active-color);
+    --theme-link-external-focus-color: var(--theme-link-focus-color);
+    /* May be a bit excessive to define a whole set of external visited link colors 
+    	but my ADHD gets the better of me 💀*/
+    --theme-link-external-visited-color: var(--theme-link-external-color);
+    --theme-link-external-visited-hover-color: var(--theme-link-external-hover-color);
+    --theme-link-external-visited-active-color: var(--theme-link-external-active-color);
+    --theme-link-external-visited-focus-color: var(--theme-link-external-focus-color);
+    /*====[ New Page Link Text Colors ]============================*/
+    --theme-link-new-color: oklch(0.80 0.25 19.69);
+    --theme-link-new-hover-color: oklch(0.92 0.25 19.69);
+    --theme-link-new-active-color: var(--theme-link-active-color);
+    --theme-link-new-focus-color: var(--theme-link-focus-color);
+    --theme-link-new-visited-color: var(--theme-link-new-color);
+
+    @media (prefers-color-scheme: light) {
+        --theme-link-font-weight: 600;
+        /*====[ Link Text Colors ]====================================*/
+        --theme-link-color: oklch(0.40 0.1839 193.24);
+        --theme-link-hover-color: oklch(0.40 0.1447 193);
+        --theme-link-active-color: oklch(0.40 0.16 108.43);
+        --theme-link-focus-color: var(--theme-link-active-color);
+        /*====[ Visited Link Text Colors ]============================*/
+        --theme-link-visited-color: var(--theme-link-color);
+        --theme-link-visited-hover-color: var(--theme-link-active-color);
+        --theme-link-visited-active-color: var(--theme-link-hover-color);
+        --theme-link-visited-focus-color: var(--theme-link-focus-color);
+        /*====[ External Link Text Colors ]============================*/
+        --theme-link-external-color: oklch(0.60 0.10 152);
+        --theme-link-external-hover-color: oklch(0.60 0.25 150);
+        --theme-link-external-active-color: var(--theme-link-active-color);
+        --theme-link-external-focus-color: var(--theme-link-focus-color);
+        --theme-link-external-visited-color: var(--theme-link-external-color);
+        --theme-link-external-visited-hover-color: var(--theme-link-external-hover-color);
+        --theme-link-external-visited-active-color: var(--theme-link-external-active-color);
+        --theme-link-external-visited-focus-color: var(--theme-link-external-focus-color);
+        /*====[ New Page Link Text Colors ]============================*/
+        --theme-link-new-color: oklch(0.55 0.15 19.69);
+        --theme-link-new-hover-color: oklch(0.55 0.25 19.69);
+        --theme-link-new-active-color: var(--theme-link-active-color);
+        --theme-link-new-focus-color: var(--theme-link-focus-color);
+        --theme-link-new-visited-color: var(--theme-link-new-color);
+    }
+}
+
+a:local-link {
+    color: orange !important;
+}
+
+.tooltip {
+    position: relative;
+    /* making the .tooltip span a container for the tooltip text */
+    border-bottom: 1px dashed #000;
+    /* little indicater to indicate it's hoverable */
+}
+
+.tooltip:before {
+    content: attr(data-text);
+    /* here's the magic */
+    position: absolute;
+    /* vertically center */
+    top: 50%;
+    transform: translateY(-50%);
+    /* move to right */
+    left: 100%;
+    margin-left: 15px;
+    /* and add a small left margin */
+    /* basic styles */
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    display: none;
+    /* hide by default */
+}
+
+.mw-usertoollinks {
+    vertical-align: super;
+    font-size: 0.875rem;
+
+    .mw-usertoollinks-talk {
+        text-transform: capitalize;
+    }
+
+    .mw-usertoollinks-contribs {
+        text-transform: capitalize;
+    }
+
+    .mw-usertoollinks-block {
+        color: oklch(70% 0.2426 24.28);
+        font-weight: 700;
+        text-transform: capitalize;
+
+        &:visited {
+            color: oklch(70% 0.2426 24.28);
+        }
+    }
+}
+
+a {
+
+    &:hover,
+    &:focus {
+        text-decoration: none;
+    }
+
+    /*====[ Regular Link Defaults ]====*/
+    &:link {
+        text-wrap: nowrap;
+        text-decoration: none;
+        transition-duration: 0.1s;
+        transition-property: color;
+        font-weight: var(--theme-link-font-weight);
+        color: var(--theme-link-color);
+
+        &:hover {
+            color: var(--theme-link-hover-color);
+        }
+
+        &:active {
+            color: var(--theme-link-active-color);
+        }
+
+        &:focus {
+            color: var(--theme-link-focus-color);
+        }
+    }
+
+    /*====[ Regular Visited Links ]====*/
+    &:visited {
+        color: var(--theme-link-visited-color);
+
+        &:hover {
+            color: var(--theme-link-visited-hover-color);
+        }
+
+        &:active {
+            color: var(--theme-link-visited-active-color);
+        }
+
+        &:focus {
+            color: var(--theme-link-visited-focus-color);
+        }
+    }
+
+    &.mw-userlink {
+        font-weight: 700;
+
+        &[title="User:Alex4401"],
+        &[title="User:Andrew323"],
+        &[title="User:Azgoodaz"],
+        &[title="User:Chyril"],
+        &[title="User:Game widow"],
+        &[title="User:Karmaworks"],
+        &[title="User:Mr Pie 5"],
+        &[title="User:Pcj"],
+        &[title="User:ReedemtheD3ad !"],
+        &[title="User:RheingoldRiver"],
+        &[title="User:SlyAceZeta"],
+        &[title="User:Stygies VIII"],
+        &[title="User:Westgrass"],
+        &[title="User:Wikiadmin"] {
+            color: hsl(273, 62%, 80%);
+        }
+    }
+
+    /*====[ New Page Links ]====*/
+    &.new {
+        color: var(--theme-link-new-color);
+
+        &:hover {
+            color: var(--theme-link-new-hover-color);
+        }
+
+        &:active {
+            color: var(--theme-link-new-active-color);
+        }
+
+        &:focus {
+            color: var(--theme-link-new-focus-color);
+        }
+
+        /*====[ New Page Visited Links ]====*/
+        &:visited {
+            color: var(--theme-link-new-color);
+
+            &:hover {
+                color: var(--theme-link-new-hover-color);
+            }
+
+            &:active {
+                color: var(--theme-link-new-active-color);
+            }
+
+            &:focus {
+                color: var(--theme-link-new-focus-color);
+            }
+        }
+    }
+}
+
+/*====[ External Links ]====*/
+/*.mw-parser-output a.extiw, <-- Not sure if this selector really sees any use but if it does, uncomment this*/
+.mw-parser-output {
+    & a.external {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%232be179' stroke-linecap='round' stroke-width='3' viewBox='0 0 24 24'%3E%3Cpath d='M10 5H8.2c-1.1 0-1.7 0-2.1.2a2 2 0 0 0-.9.9C5 6.5 5 7 5 8.2v7.6c0 1.1 0 1.7.2 2.1.2.4.5.7.9.9.4.2 1 .2 2.1.2h7.6c1.1 0 1.7 0 2.1-.2.4-.2.7-.5.9-.9.2-.4.2-1 .2-2.1V14m1-5V4m0 0h-5m5 0-7 7'/%3E%3C/svg%3E");
+        background-image: none;
+        padding-right: 0em;
+        color: var(--theme-link-external-color);
+
+        &:hover {
+            color: var(--theme-link-external-hover-color);
+        }
+
+        &:active {
+            color: var(--theme-link-external-active-color);
+        }
+
+        &:focus {
+            color: var(--theme-link-external-focus-color);
+        }
+
+        /*====[ Visited External Links ]====*/
+        &:visited {
+            color: var(--theme-link-external-visited-color);
+
+            &:hover {
+                color: var(--theme-link-external-visited-hover-color);
+            }
+
+            &:active {
+                color: var(--theme-link-external-visited-active-color);
+            }
+
+            &:focus {
+                color: var(--theme-link-external-visited-focus-color);
+            }
+        }
+    }
+}

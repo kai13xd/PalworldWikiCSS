@@ -1,0 +1,53 @@
+/*==============================================================================
+    Tabber Box
+==============================================================================*/
+.tabber {
+    margin-bottom: 1rem;
+}
+
+.tabber__header {
+    box-shadow: none;
+}
+
+.tabber__section {
+    /* background-color: oklch(0.4 0.05 203 / 0.3); */
+    border-top: 2px solid var(--theme-accent-color-40);
+}
+
+.tabber__panel {
+    padding: 1rem;
+}
+
+.tabber__indicator {
+    background-color: transparent;
+}
+
+.tabber__tab {
+    background: var(--background-triangle-single);
+    background-color: var(--theme-triangle-header-background-color);
+    background-blend-mode: overlay;
+    background-size: cover;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: var(--theme-border-radius-inner);
+
+    &[aria-selected='false'] {
+        color: var(--theme-heading-color);
+        background-color: var(--theme-triangle-header-background-color);
+        transition-duration: 150ms;
+        transition-property: transform, border-radius;
+    }
+
+    &[aria-selected='true'],
+    &:hover {
+        background-color: var(--theme-triangle-header-background-color);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        color: var(--theme-heading-color);
+        transform: translateY(0.5rem);
+
+        &:visited {
+            color: var(--theme-heading-color);
+        }
+    }
+}

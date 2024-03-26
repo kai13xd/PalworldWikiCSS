@@ -1,0 +1,83 @@
+:root {
+    /*====[ Colors ]===================================================*/
+    --theme-green-color-hue: 158.36;
+    --theme-color-green-80: oklch(80% 0.2774 var(--theme-green-color-hue));
+    --theme-color-green-70: oklch(70% 0.2426 var(--theme-green-color-hue));
+    --theme-color-green-60: oklch(60% 0.2078 var(--theme-green-color-hue));
+    --theme-color-green-50: oklch(50% 0.173 var(--theme-green-color-hue));
+    --theme-color-green-40: oklch(40% 0.1382 var(--theme-green-color-hue));
+    --theme-color-green-30: oklch(30% 0.1033 var(--theme-green-color-hue));
+    --theme-red-color-hue: 18.69;
+    --theme-color-red-80: oklch(80% 0.1469 var(--theme-red-color-hue));
+    --theme-color-red-70: oklch(70% 0.2437 var(--theme-red-color-hue));
+    --theme-color-red-60: oklch(60% 0.2709 var(--theme-red-color-hue));
+    --theme-color-red-50: oklch(50% 0.2263 var(--theme-red-color-hue));
+    --theme-color-red-40: oklch(40% 0.1806 var(--theme-red-color-hue));
+    --theme-color-red-30: oklch(30% 0.1349 var(--theme-red-color-hue));
+    /*====[ Diff Colors ]===================================================*/
+    --theme-diff-background-color: var(--theme-accent-color-25);
+    --theme-diff-added-color: var(--theme-color-green-60);
+    --theme-diff-added-change-color: var(--theme-color-green-70);
+    --theme-diff-deleted-color: var(--theme-color-red-60);
+    --theme-diff-deleted-change-color: var(--theme-color-red-70);
+    --theme-diff-context-color: var(--theme-grayscale-color-60);
+    --theme-diff-context-textcolor: var(--theme-grayscale-color-70);
+}
+
+.diff {
+    background-color: var(--theme-diff-background-color);
+    border-radius: 8px;
+    padding: 1rem;
+
+    .diff-addedline {
+        font-size: 0.875rem;
+        border-color: var(--theme-diff-added-color);
+
+        .diffchange {
+            background: var(--theme-diff-added-change-color);
+            color: black;
+            font-weight: 800 !important;
+        }
+    }
+
+    .diff-deletedline {
+        font-size: 0.875rem;
+        border-color: var(--theme-diff-deleted-color);
+
+        .diffchange {
+            background: var(--theme-diff-deleted-change-color);
+            color: black;
+            font-weight: 800 !important;
+        }
+    }
+
+    .diff-context {
+        font-size: 0.875rem;
+        background: transparent;
+        border-color: var(--theme-diff-context-color);
+        color: var(--theme-diff-context-textcolor);
+    }
+}
+
+.mw-changeslist-legend {
+    display: none;
+}
+
+abbr {
+    &.minoredit {
+        font-size: 0.875rem;
+        text-transform: capitalize;
+
+        &::after {
+            content: "inor Edit"
+        }
+    }
+
+    &.newpage {
+        font-size: 0.875rem;
+
+        &::after {
+            content: "ew Page"
+        }
+    }
+}

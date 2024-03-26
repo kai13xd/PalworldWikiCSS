@@ -1,0 +1,37 @@
+.mw-echo-ui-pageNotificationsOptionWidget-label-count {
+    background-color: transparent;
+}
+
+.mw-echo-ui-notificationBadgeButtonPopupWidget-popup>.oo-ui-popupWidget-popup>.oo-ui-popupWidget-footer .mw-echo-ui-notificationBadgeButtonPopupWidget-footer-buttons .oo-ui-buttonElement:last-child {
+    border-color: var(--theme-border-color);
+}
+
+.mw-echo-ui-notificationItemWidget:last-child {
+    border: 0;
+}
+
+.mw-echo-ui-overlay {
+    font-size: initial;
+}
+
+.mw-echo-ui-notificationItemWidget-content-message-header {
+    color: #fff;
+}
+
+.mw-echo-ui-notificationItemWidget-content-message-body {
+    color: var(--theme-text-muted-color)
+}
+
+.mw-echo-ui-notificationsInboxWidget-toolbarWrapper {
+    background-color: var(--theme-accent-color-25);
+}
+
+.mw-echo-ui-notificationItemWidget-unread {
+    background-color: var(--theme-accent-color-25);
+    border: 0;
+    color: white;
+
+    &:hover {
+        background-color: var(--theme-accent-color-30);
+    }
+}

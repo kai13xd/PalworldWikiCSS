@@ -1,0 +1,161 @@
+/*====[ Tables ]=========================================================================
+ Notes: 
+   None
+========================================================================================*/
+:root {
+    /*====[ Table Colors ]=======================================*/
+    --theme-table-color: oklch(33% 0.075 var(--theme-accent-color-hue));
+    --theme-table-hovered-color: oklch(31% 0.0696 var(--theme-accent-color-hue));
+    --theme-table-data-hovered-color: oklch(35% 0.0794 var(--theme-accent-color-hue));
+    --theme-table-column-border-color: var(--theme-table-color);
+    /*====[ Header ]=============================================*/
+    --theme-table-header-color: var(--theme-table-color);
+    --theme-table-header-hovered-color: oklch(40% 0.0903 var(--theme-accent-color-hue));
+    /*====[ Row ]================================================*/
+    --theme-table-row-color: oklch(23% 0.0522 var(--theme-accent-color-hue));
+    --theme-table-row-hovered-color: var(--theme-table-hovered-color);
+    /*====[ Alt Row ]============================================*/
+    --theme-table-altrow-color: oklch(27% 0.0609 var(--theme-accent-color-hue));
+    --theme-table-altrow-hovered-color: var(--theme-table-hovered-color);
+    --theme-table-border-radius: 8px;
+    --theme-table-box-shadow: var(--theme-box-shadow);
+
+    @media (prefers-color-scheme: light) {
+        /*====[ Table Colors ]=======================================*/
+        --theme-table-color: var(--theme-accent-color-80);
+        --theme-table-hovered-color: var(--theme-accent-color-75);
+        --theme-table-data-hovered-color: var(--theme-accent-color-80);
+        --theme-table-column-border-color: var(--theme-table-color);
+        /*====[ Header ]=============================================*/
+        --theme-table-header-color: var(--theme-table-color);
+        --theme-table-header-hovered-color: var(--theme-accent-color-60);
+        /*====[ Row ]================================================*/
+        --theme-table-row-color: var(--theme-accent-color-75);
+        --theme-table-row-hovered-color: var(--theme-table-hovered-color);
+        /*====[ Alt Row ]============================================*/
+        --theme-table-altrow-color: var(--theme-accent-color-70);
+        --theme-table-altrow-hovered-color: var(--theme-table-hovered-color);
+        --theme-table-border-radius: 8px;
+        --theme-table-box-shadow: var(--theme-box-shadow);
+    }
+}
+
+.wikitable:has(.mw-collapsed) {
+    tr {
+        visibility: collapse;
+    }
+}
+
+.wikitable {
+    display: table;
+    box-sizing: border-box;
+    white-space: unset;
+    border: 0;
+    color: inherit;
+    background-color: transparent;
+    border-radius: var(--theme-table-border-radius);
+    overflow: clip;
+    box-shadow: var(--theme-table-box-shadow);
+
+    caption {
+        white-space: nowrap;
+        /* color: #fff; */
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+
+    tr:has(th) {}
+
+    th {
+        font-weight: 600;
+        transition: background-color 0.2s;
+    }
+
+    td {
+        transition: background-color 0.2s;
+
+        &:hover {
+            color: white;
+            background-color: var(--theme-table-data-hovered-color);
+        }
+    }
+
+    tr {
+        transition: background-color 0.2s;
+
+        /*Header color*/
+        >th {
+            background-color: var(--theme-table-header-color);
+
+            /*On hover header column highlighting*/
+            &:hover {
+                background-color: var(--theme-table-header-hovered-color);
+            }
+        }
+
+        /*Row coloring*/
+        &:nth-child(odd) {
+            background-color: var(--theme-table-row-color);
+        }
+
+        /*Alternate row coloring*/
+        &:nth-child(even) {
+            background-color: var(--theme-table-altrow-color);
+        }
+    }
+
+    thead>tr>th,
+    tbody>tr>th,
+    tbody>tr>td {
+        border: 0;
+
+        &:not(:last-child) {
+            border-right: 1px solid var(--theme-table-column-border-color);
+        }
+    }
+
+    /*On hover row highlighting*/
+    tbody>tr:hover {
+        background-color: var(--theme-table-row-hovered-color);
+    }
+}
+
+/*====[ Wide Table ]====*/
+.table-wide {
+    clear: both;
+    position: relative;
+}
+
+.mw-parser-output>.table-width {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.table-wide-inner {
+    overflow-x: auto;
+}
+
+.table-wide-inner>table {
+    margin: 0;
+}
+
+.table-wide::before {
+    box-shadow: var(--theme-box-shadow);
+    content: "";
+    display: block;
+    width: 20px;
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+}
+
+/*====[ Collapsible Table ]====*/
+.mw-collapsible-toggle-default {
+
+    &::before,
+    &::after {
+        content: '';
+    }
+}

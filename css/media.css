@@ -1,0 +1,138 @@
+/*====[ Media Queries ]=========================================================================
+    Notes: 
+        None
+========================================================================================*/
+@media
+
+/*====[ Tablet ]====*/
+(max-width: 1400px) {
+    body {
+        grid-template:
+            "WikiggHeader   WikiggHeader   WikiggHeader"
+            ".              .              .           " var(--theme-site-logo-height) "LeftNavigation LeftNavigation LeftNavigation"
+            ".              TopNavigation  .           "
+            ".              ContentBody    .           "
+            ".              ContentFooter  .           "
+            ".              .              .           " 40vh
+            "WikiggFooter   WikiggFooter   WikiggFooter" auto
+            /6% auto 6%;
+    }
+
+    #mw-panel {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: var(--theme-accent-color-20);
+        box-shadow: var(--theme-box-shadow);
+        /* Margin for search bar */
+        margin-bottom: 4rem;
+    }
+
+    .portal {
+        background: none;
+        box-shadow: none;
+        /* border: 0; */
+        /* overflow: visible; */
+        margin: 0;
+        border-radius: 0;
+
+        /* min-width: 8rem; */
+        .vector-menu-heading {
+            padding: 9px 12px 8px;
+            border: 0;
+            border-radius: 0;
+            background: none;
+            color: var(--theme-accent-color-25);
+        }
+
+        .body {
+            display: none;
+            position: absolute;
+
+            .menu {
+                position: relative;
+                min-width: 8rem;
+                background-color: var(--theme-accent-color-25);
+                z-index: 1;
+
+                .mw-list-item {
+                    padding: 9px 12px 8px;
+                    text-align: center;
+                }
+            }
+        }
+
+        /* Keep the last tab, Tools, from overflowing past the screen when expanded */
+        &:last-child .body {
+            right: 0;
+            left: auto;
+        }
+
+        &.expanded,
+        &:hover {
+            .body {
+                display: block;
+
+                .menu {
+                    box-shadow: var(--theme-sidebar-box-shadow);
+                }
+            }
+        }
+    }
+
+    #mw-head #right-navigation #p-cactions {
+        margin-right: 0;
+    }
+
+    .vector-menu-dropdown .vector-menu-content.body {
+        left: auto;
+        right: -1px;
+    }
+}
+
+@media (max-width: 1024px) {
+    body {
+        grid-template:
+            "WikiggHeader"
+            "." var(--theme-site-logo-height) "LeftNavigation"
+            "Search"
+            "TopNavigation"
+            "ContentBody"
+            "ContentFooter"
+            "." 40vh
+            "WikiggFooter";
+    }
+
+    #p-search {
+        justify-self: center;
+    }
+
+    #mw-page-base {
+        border-radius: 0;
+    }
+}
+
+#wpTextbox1 {
+    resize: vertical;
+}
+
+/*Kinda wish this media query did not exist*/
+@media screen and (max-width: 720px) {
+    #mw-head {
+        top: auto;
+    }
+
+    .mw-body {
+        /*An annoying hack to get the top navigation tabs align seamlessly*/
+        margin-top: -1px;
+    }
+
+    /*Eh get rid of this tab in mobile to prevent the tabs from overflowing as a temp fix*/
+    #ca-view {
+        display: none;
+    }
+}
+
+@media
+
+/****** Mobile ******/
+(max-width: 425px) {}

@@ -1,0 +1,29 @@
+div.games-showcase-footer,
+div.games-showcase-header {
+    margin: 1rem;
+    text-align: center;
+
+    img {
+        border-radius: 8px;
+        height: 100%;
+        width: auto;
+        object-fit: contain;
+    }
+}
+
+aside.games-showcase-sidebar {
+    position: sticky;
+    top: 5%;
+    max-width: 20rem;
+    margin-left: 2rem;
+
+    div.sidebar-showcase {
+        padding-bottom: 1rem;
+
+        img.sidebar-img {
+            object-fit: contain;
+            height: auto;
+            max-width: 100%
+        }
+    }
+}

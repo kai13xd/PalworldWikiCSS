@@ -1,0 +1,158 @@
+/*====[ Headings ]====================================================================
+    Notes: 
+        None
+========================================================================================*/
+:root {
+    /*====[ Font Sizes ]====*/
+    --line-height: calc(1ex / 0.32);
+    /* --line-height: normal; */
+    --h1-font-size: 2.5rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --h4-font-size: 1.125rem;
+    --h5-font-size: 1.125rem;
+    --h6-font-size: 1.125rem;
+}
+
+.mw-body,
+.vector-body {
+    :is(h1, h2, h3, h4, h5, h6) {
+        font-family: var(--font-family-default);
+        font-weight: 600;
+        color: var(--theme-heading-color);
+        line-height: normal;
+        padding: 0;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        border: 0;
+        outline: 1px dotted yellow;
+
+        &:is(h2)~:not(h2) {
+            margin-left: 1rem;
+            outline: 1px dotted red;
+
+            &:is(h3)~ :is(h2 ~ :not(h2 + *, h3))& {
+                outline: 1px dotted blue;
+                margin-left: 2rem;
+
+                &:is(h4)~ :is(h3 ~ :not(h3 + *, h4))& {
+                    outline: 1px dotted magenta;
+                    margin-left: 3rem;
+
+                    &:is(h5)~:is(h4 ~ :not(h4 + *, h5))& {
+                        outline: 1px dotted cyan;
+                        margin-left: 4rem;
+                    }
+                }
+            }
+        }
+
+        &:has(.mw-page-title-main, .mw-editsection) {
+            &:is(h1) {
+                --height: 4px;
+            }
+
+            &:is(h2) {
+                --height: 3px;
+                --width: 75%;
+            }
+
+            &:is(h3, h4, h5, h6) {
+                --height: 2px;
+                --width: 33%;
+            }
+
+            --neg-height: calc(0px - var(--height));
+            --border-radius: calc(var(--height) / 3);
+            --start-color: var(--theme-heading-color);
+            --end-color: oklch(from var(--theme-heading-color) l c h / 100%);
+
+            &::after {
+                content: "";
+                display: block;
+                border-radius: var(--border-radius);
+                margin-top: var(--neg-height);
+                height: var(--height);
+                width: var(--width);
+                margin-bottom: 0;
+                background-image: linear-gradient(to right, var(--start-color) 0%, transparent 100%);
+                transition: opacity 150ms linear;
+                opacity: 30%;
+            }
+
+            span:last-child::after {
+                content: "";
+                display: block;
+                border-radius: var(--border-radius);
+                height: var(--height);
+                width: var(--width);
+                background-image: linear-gradient(to right, var(--theme-link-hover-color) 0%, transparent 100%);
+                transition: all 150ms linear;
+                opacity: 0;
+            }
+
+            &:has(.mw-editsection:hover) {
+                &::after {
+                    opacity: 0;
+                }
+
+                span:last-child::after {
+                    opacity: 100%;
+                }
+            }
+        }
+    }
+
+    #firstHeading {
+        margin-top: 0;
+    }
+
+    h1,
+    #Heading_1 {
+        font-size: var(--h1-font-size);
+    }
+
+    h2,
+    #Heading_2 {
+        font-size: var(--h2-font-size);
+    }
+
+    h3,
+    #Heading_3 {
+        font-size: var(--h3-font-size);
+    }
+
+    h4,
+    #Heading_4 {
+        font-size: var(--h4-font-size);
+    }
+
+    h5,
+    #Heading_5 {
+        font-size: var(--h5-font-size);
+    }
+
+    h6,
+    #Heading_6 {
+        font-size: var(--h6-font-size);
+    }
+}
+
+#mw-pages .mw-category {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.mw-category-group {
+    flex-basis: 15%;
+
+    >h3 {
+        font-size: 2.0rem;
+        font-weight: 200;
+        /* padding-top: 0; */
+        margin-top: 0;
+        /* font-style: italic; */
+    }
+}

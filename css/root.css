@@ -1,0 +1,1051 @@
+/*====[ Font Imports ]=========================================================*/
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wdth,wght@62.5..100,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Noto+Sans+TC:wght@100..900&display=swap");
+
+/*==============================================================================
+    Theming Variables (Dark Default)
+==============================================================================*/
+:root {
+    /*====[ wiki.gg Constants ]===============================================*/
+    --wikigg-header-height: 35px;
+    --wikigg-footer-height: 35px;
+    --wikigg-primary-color: #e74485;
+    --wikigg-secondary-color: #000538;
+    /*====[ Site Background ]=================================================*/
+    --theme-site-background-image: url("//palworld.wiki.gg/images/9/97/Landscape.png");
+    /*====[ Site logo ]=======================================================*/
+    --theme-site-logo-image: url("//palworld.wiki.gg/images/e/e6/Site-logo.png?bd301");
+    --theme-site-logo-width: 250px;
+    --theme-site-logo-height: 200px;
+    /*====[ Font Stack ]======================================================*/
+    --font-family-fallback: Helvetica, Arial, sans-serif, system-ui;
+    --font-family-default: 'Noto Sans';
+    --font-family-monospace: 'Noto Sans Mono', monospace;
+    --font-family-japanese: 'Noto Sans JP';
+    --font-family-korean: 'Noto Sans KR';
+    --font-family-traditional-chinese: 'Noto Sans TC';
+    --font-family-simplified-chinese: 'Noto Sans SC';
+    --font-family-hongkong-chinese: 'Noto Sans HK';
+    --font-family-heading: var(--font-family-default);
+    --font-family-body: var(--font-family-default);
+    --font-size: 1rem;
+    /*====[ Base Theme Colors ]===============================================
+        See https://oklch.com/
+    ========================================================================*/
+    --theme-accent-color-hue: 203.07;
+    --theme-accent-color-80: oklch(80% 0.1817 var(--theme-accent-color-hue));
+    --theme-accent-color-75: oklch(75% 0.1697 var(--theme-accent-color-hue));
+    --theme-accent-color-70: oklch(70% 0.1588 var(--theme-accent-color-hue));
+    --theme-accent-color-65: oklch(65% 0.1479 var(--theme-accent-color-hue));
+    --theme-accent-color-60: oklch(60% 0.1360 var(--theme-accent-color-hue));
+    --theme-accent-color-55: oklch(55% 0.1251 var(--theme-accent-color-hue));
+    --theme-accent-color-50: oklch(50% 0.1131 var(--theme-accent-color-hue));
+    --theme-accent-color-45: oklch(45% 0.1022 var(--theme-accent-color-hue));
+    --theme-accent-color-40: oklch(40% 0.0903 var(--theme-accent-color-hue));
+    --theme-accent-color-35: oklch(35% 0.0794 var(--theme-accent-color-hue));
+    --theme-accent-color-30: oklch(30% 0.0674 var(--theme-accent-color-hue));
+    --theme-accent-color-25: oklch(25% 0.0565 var(--theme-accent-color-hue));
+    --theme-accent-color-20: oklch(20% 0.0446 var(--theme-accent-color-hue));
+    --theme-grayscale-color-80: oklch(80% 0 0);
+    --theme-grayscale-color-75: oklch(75% 0 0);
+    --theme-grayscale-color-70: oklch(70% 0 0);
+    --theme-grayscale-color-65: oklch(65% 0 0);
+    --theme-grayscale-color-60: oklch(60% 0 0);
+    --theme-grayscale-color-55: oklch(55% 0 0);
+    --theme-grayscale-color-50: oklch(50% 0 0);
+    --theme-grayscale-color-45: oklch(45% 0 0);
+    --theme-grayscale-color-40: oklch(40% 0 0);
+    --theme-grayscale-color-35: oklch(35% 0 0);
+    --theme-grayscale-color-30: oklch(30% 0 0);
+    --theme-grayscale-color-25: oklch(25% 0 0);
+    --theme-grayscale-color-20: oklch(20% 0 0);
+    --theme-grayscale-color-15: oklch(15% 0 0);
+    --theme-grayscale-color-10: oklch(10% 0 0);
+    /*====[ Scrollbar ]===================================================*/
+    scroll-timeline: --scrollTimeline y;
+    scrollbar-color: var(--theme-accent-color-80) var(--wikigg-secondary-color);
+    scroll-behavior: smooth;
+    /*====[ Borders ]===============================================*/
+    --theme-border-color: var(--theme-accent-color-50);
+    --theme-border-radius-outer: 1rem;
+    --theme-border-radius-inner: calc(var(--theme-border-radius-outer) - 0.5rem);
+    /*====[ Text Colors ]===============================================*/
+    --theme-text-color: oklch(82% 0.03 195);
+    --theme-text-muted-color: oklch(75% 0 0);
+    --theme-text-disabled-color: oklch(50% 0 0);
+    --theme-text-color-note: oklch(82% 0 0);
+    --theme-text-color-em: oklch(90% 0 0);
+    --theme-text-selection-color: oklch(90% 0.14 var(--theme-accent-color-hue));
+    --theme-text-selection-background-color: oklch(60% 0.07 var(--theme-accent-color-hue) / 30%);
+    --theme-heading-color: oklch(90% 0.03 195);
+    --theme-content-background-color: oklch(15% 0.0537 var(--theme-accent-color-hue) / 85%);
+    --theme-triangle-header-background-color: var(--theme-accent-color-30);
+    --theme-content-border-width: 0px;
+    --theme-content-border-style: var(--theme-box-border-style);
+    --theme-content-border-color: var(--theme-box-border-color);
+    --theme-content-subpage-icon-color: rgba(0, 0, 0, 0.3);
+    /* sidebar/content common */
+    --theme-box-border-width: 2px;
+    --theme-box-border-color: #1F2827;
+    --theme-box-background: none;
+    --theme-box-border-style: solid;
+    --theme-highlight-background: #069EA6;
+    /*====[ Footer ]===============================================*/
+    --theme-footer-text-color: #fff;
+    --theme-footer-background: transparent;
+    --theme-footer-link-color: var(--theme-link-external-color);
+    --theme-footer-link-color-hover: #66b8ff;
+    /*====[ Notification ]===============================================*/
+    --theme-notice-red-text-color: #bf0017;
+    --theme-notice-orange-text-color: #cf721c;
+    /*====[ Buttons Colors ]======================================================*/
+    --theme-button-background: #87AEC9;
+    --theme-button-border-color: #006cb0;
+    --theme-button-background-active: #a7c7dc;
+    --theme-button-border-color-active: #006cb0;
+    --theme-button-primary-color: hsl(210 80 50%);
+    --theme-button-primary-disabled-color: hsl(210 33 40%);
+    --theme-box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.5);
+    --theme-button-border-radius: 8px;
+    --theme-content-category-border-radius: 8px;
+    --theme-button-box-shadow: rgba(0, 31, 31, 0.32) 0 0 1px 0,
+        rgba(0, 31, 31, 0.16) 0 5px 5px 0;
+    /*====[ Acrylic Background Constants ]====================================================*/
+    --theme-blur-factor: blur(16px);
+    --theme-blur-saturation: saturate(125%);
+    --theme-blur-effect: var(--theme-blur-factor) var(--theme-blur-saturation);
+    --background-triangle-double: url("https://palworld.wiki.gg/images/4/45/Background_Triangle_Double.png");
+    --background-triangle-single: url("https://palworld.wiki.gg/images/7/77/Background_Triangle_Single.png");
+    --background-title: url("https://palworld.wiki.gg/images/8/87/Background_Title.png");
+    --background-title-yellow: url("https://palworld.wiki.gg/images/3/3d/Background_Title_Yellow.png");
+    --background-rarity: url("https://palworld.wiki.gg/images/2/26/Background_Rarity.png");
+    --background-boss: url("https://palworld.wiki.gg/images/f/f9/Background_Boss.png");
+    --background-technology: url("https://palworld.wiki.gg/images/4/4e/Background_Technology.png");
+    --background-ancient-technology: url("https://palworld.wiki.gg/images/a/af/Background_Technology_Ancient.png");
+    /* https://www.iconfinder.com/icons/7422432/wikipedia_wiki_encyclopedia_knowledge_education_icon */
+    --icon-wiki: url("data:image/svg+xml,%3C%3Fxml version='1.0' %3F%3E%3Csvg viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ctitle/%3E%3Cg id='Wikipedia'%3E%3Cpath d='M32.59,12.32a.46.46,0,0,1-.08.25.26.26,0,0,1-.19.11,2.34,2.34,0,0,0-1.35.53,5,5,0,0,0-1.09,1.73L24.16,27.82c0,.12-.14.18-.31.18a.33.33,0,0,1-.31-.18l-3.21-6.7-3.69,6.7a.34.34,0,0,1-.31.18.34.34,0,0,1-.33-.18L10.39,14.94a4.37,4.37,0,0,0-1.11-1.67,3,3,0,0,0-1.63-.59.19.19,0,0,1-.16-.1.29.29,0,0,1-.08-.22c0-.21.06-.31.18-.31.5,0,1,0,1.57.07s1,.07,1.43.07,1,0,1.61-.07,1.23-.07,1.73-.07c.12,0,.18.1.18.31s0,.32-.11.32a2.09,2.09,0,0,0-1.18.38,1,1,0,0,0-.44.85,1.72,1.72,0,0,0,.18.67L17.2,25.06l2.64-5-2.46-5.15a6.87,6.87,0,0,0-1.08-1.78A2.25,2.25,0,0,0,15,12.68a.17.17,0,0,1-.15-.1.33.33,0,0,1-.08-.22c0-.21.05-.31.16-.31a11.78,11.78,0,0,1,1.38.07,12.87,12.87,0,0,0,1.29.07c.45,0,.92,0,1.42-.07s1-.07,1.52-.07c.12,0,.18.1.18.31s0,.32-.11.32c-1,.07-1.5.35-1.5.85a2.8,2.8,0,0,0,.35,1l1.62,3.3,1.62-3A2.43,2.43,0,0,0,23,13.78c0-.69-.5-1.06-1.5-1.1-.09,0-.13-.11-.13-.32a.42.42,0,0,1,.06-.21c.05-.07.09-.1.14-.1.36,0,.8,0,1.32.07s.91.07,1.23.07.58,0,1-.06,1.05-.08,1.43-.08c.09,0,.13.09.13.27s-.08.36-.24.36a2.81,2.81,0,0,0-1.41.48,6.12,6.12,0,0,0-1.33,1.78l-2.15,4,2.91,5.94,4.31-10a2.64,2.64,0,0,0,.22-1c0-.73-.5-1.12-1.5-1.16-.09,0-.14-.11-.14-.32s.07-.31.21-.31c.36,0,.8,0,1.3.07s.85.07,1.16.07.71,0,1.14-.07a11.09,11.09,0,0,1,1.22-.07Q32.59,12.05,32.59,12.32Z'/%3E%3C/g%3E%3C/svg%3E");
+    /* https://www.iconfinder.com/icons/8678406/brush_paint_painting_icon */
+    --icon-brush: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3Cpath d='M15.456 9.678l-.142-.142a5.475 5.475 0 0 0-2.39-1.349c-2.907-.778-5.699.869-6.492 3.83-.043.16-.066.34-.104.791-.154 1.87-.594 3.265-1.8 4.68 2.26.888 4.938 1.514 6.974 1.514a5.505 5.505 0 0 0 5.31-4.078 5.497 5.497 0 0 0-1.356-5.246zM13.29 6.216l4.939-3.841a1 1 0 0 1 1.32.082l2.995 2.994a1 1 0 0 1 .082 1.321l-3.84 4.938a7.505 7.505 0 0 1-7.283 9.292C8 21.002 3.5 19.5 1 18c3.98-3 3.047-4.81 3.5-6.5 1.058-3.95 4.842-6.257 8.789-5.284zm3.413 1.879c.065.063.13.128.193.194l1.135 1.134 2.475-3.182-1.746-1.746-3.182 2.475 1.125 1.125z'/%3E%3C/g%3E%3C/svg%3E");
+    /* icons below are from https://tabler-icons.io/ */
+    --icon-chevron-down: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-chevron-down' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'%3E%3C/path%3E%3Cpath d='M6 9l6 6l6 -6'%3E%3C/path%3E%3C/svg%3E");
+    --icon-doc: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-file' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'%3E%3C/path%3E%3Cpath d='M14 3v4a1 1 0 0 0 1 1h4'%3E%3C/path%3E%3Cpath d='M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z'%3E%3C/path%3E%3C/svg%3E");
+    --icon-star-filled: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-star-filled' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'%3E%3C/path%3E%3Cpath d='M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z' stroke-width='0' fill='currentColor'%3E%3C/path%3E%3C/svg%3E");
+    --icon-star-empty: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-star' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'%3E%3C/path%3E%3Cpath d='M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z'%3E%3C/path%3E%3C/svg%3E");
+    --icon-talk: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-messages' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'%3E%3C/path%3E%3Cpath d='M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10'%3E%3C/path%3E%3Cpath d='M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2'%3E%3C/path%3E%3C/svg%3E");
+    --icon-eye: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-eye' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'%3E%3C/path%3E%3Cpath d='M12 12m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0'%3E%3C/path%3E%3Cpath d='M22 12c-2.667 4.667 -6 7 -10 7s-7.333 -2.333 -10 -7c2.667 -4.667 6 -7 10 -7s7.333 2.333 10 7'%3E%3C/path%3E%3C/svg%3E");
+    --icon-edit: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-edit' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'%3E%3C/path%3E%3Cpath d='M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1'%3E%3C/path%3E%3Cpath d='M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z'%3E%3C/path%3E%3Cpath d='M16 5l3 3'%3E%3C/path%3E%3C/svg%3E");
+    --icon-pencil-plus: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-pencil-plus' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'%3E%3C/path%3E%3Cpath d='M8 20l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4h4z'%3E%3C/path%3E%3Cpath d='M13.5 6.5l4 4'%3E%3C/path%3E%3Cpath d='M16 18h4m-2 -2v4'%3E%3C/path%3E%3C/svg%3E");
+    --icon-code: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-code' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'%3E%3C/path%3E%3Cpath d='M7 8l-4 4l4 4'%3E%3C/path%3E%3Cpath d='M17 8l4 4l-4 4'%3E%3C/path%3E%3Cpath d='M14 4l-4 16'%3E%3C/path%3E%3C/svg%3E");
+    --icon-globe: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-world' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'%3E%3C/path%3E%3Cpath d='M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0'%3E%3C/path%3E%3Cpath d='M3.6 9l16.8 0'%3E%3C/path%3E%3Cpath d='M3.6 15l16.8 0'%3E%3C/path%3E%3Cpath d='M11.5 3a17 17 0 0 0 0 18'%3E%3C/path%3E%3Cpath d='M12.5 3a17 17 0 0 1 0 18'%3E%3C/path%3E%3C/svg%3E");
+    --icon-search: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-search' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'%3E%3C/path%3E%3Cpath d='M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0'%3E%3C/path%3E%3Cpath d='M21 21l-6 -6'%3E%3C/path%3E%3C/svg%3E");
+    --icon-history: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-history' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'%3E%3C/path%3E%3Cpath d='M12 8l0 4l2 2'%3E%3C/path%3E%3Cpath d='M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5'%3E%3C/path%3E%3C/svg%3E");
+    --icon-jigsaw: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-puzzle' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'%3E%3C/path%3E%3Cpath d='M4 7h3a1 1 0 0 0 1 -1v-1a2 2 0 0 1 4 0v1a1 1 0 0 0 1 1h3a1 1 0 0 1 1 1v3a1 1 0 0 0 1 1h1a2 2 0 0 1 0 4h-1a1 1 0 0 0 -1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-1a2 2 0 0 0 -4 0v1a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h1a2 2 0 0 0 0 -4h-1a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1'%3E%3C/path%3E%3C/svg%3E");
+    --icon-more: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-dots-vertical' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'%3E%3C/path%3E%3Cpath d='M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0'%3E%3C/path%3E%3Cpath d='M12 19m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0'%3E%3C/path%3E%3Cpath d='M12 5m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0'%3E%3C/path%3E%3C/svg%3E");
+    --icon-sidebar-collapse: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-layout-sidebar-left-collapse' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'%3E%3C/path%3E%3Cpath d='M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z'%3E%3C/path%3E%3Cpath d='M9 4v16'%3E%3C/path%3E%3Cpath d='M15 10l-2 2l2 2'%3E%3C/path%3E%3C/svg%3E");
+    --icon-sidebar-expand: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-layout-sidebar-left-expand' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'%3E%3C/path%3E%3Cpath d='M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z'%3E%3C/path%3E%3Cpath d='M9 4v16'%3E%3C/path%3E%3Cpath d='M14 10l2 2l-2 2'%3E%3C/path%3E%3C/svg%3E");
+    --icon-user: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-user-circle' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'%3E%3C/path%3E%3Cpath d='M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0'%3E%3C/path%3E%3Cpath d='M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0'%3E%3C/path%3E%3Cpath d='M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855'%3E%3C/path%3E%3C/svg%3E");
+    --icon-arrow-bar-right: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-arrow-bar-right' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'%3E%3C/path%3E%3Cpath d='M20 12l-10 0'%3E%3C/path%3E%3Cpath d='M20 12l-4 4'%3E%3C/path%3E%3Cpath d='M20 12l-4 -4'%3E%3C/path%3E%3Cpath d='M4 4l0 16'%3E%3C/path%3E%3C/svg%3E");
+    --icon-language: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-language' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'%3E%3C/path%3E%3Cpath d='M4 5h7'%3E%3C/path%3E%3Cpath d='M9 3v2c0 4.418 -2.239 8 -5 8'%3E%3C/path%3E%3Cpath d='M5 9c0 2.144 2.952 3.908 6.7 4'%3E%3C/path%3E%3Cpath d='M12 20l4 -9l4 9'%3E%3C/path%3E%3Cpath d='M19.1 18h-6.2'%3E%3C/path%3E%3C/svg%3E");
+    --icon-category: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' class='icon icon-tabler icon-tabler-category-2' width='24' height='24' viewBox='0 0 24 24' stroke-width='2' stroke='currentColor' fill='none' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath stroke='none' d='M0 0h24v24H0z' fill='none'%3E%3C/path%3E%3Cpath d='M14 4h6v6h-6z'%3E%3C/path%3E%3Cpath d='M4 14h6v6h-6z'%3E%3C/path%3E%3Cpath d='M17 17m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0'%3E%3C/path%3E%3Cpath d='M7 7m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0'%3E%3C/path%3E%3C/svg%3E");
+    --icon-steam: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNjUgNjUiIGZpbGw9IiNmZmYiPjx1c2UgeGxpbms6aHJlZj0iI0IiIHg9Ii41IiB5PSIuNSIvPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iQSIgeDI9IjUwJSIgeDE9IjUwJSIgeTI9IjEwMCUiIHkxPSIwJSI+PHN0b3Agc3RvcC1jb2xvcj0iIzExMWQyZSIgb2Zmc2V0PSIwJSIvPjxzdG9wIHN0b3AtY29sb3I9IiMwNTE4MzkiIG9mZnNldD0iMjEuMiUiLz48c3RvcCBzdG9wLWNvbG9yPSIjMGExYjQ4IiBvZmZzZXQ9IjQwLjclIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzEzMmU2MiIgb2Zmc2V0PSI1OC4xJSIvPjxzdG9wIHN0b3AtY29sb3I9IiMxNDRiN2UiIG9mZnNldD0iNzMuOCUiLz48c3RvcCBzdG9wLWNvbG9yPSIjMTM2NDk3IiBvZmZzZXQ9Ijg3LjMlIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzEzODdiOCIgb2Zmc2V0PSIxMDAlIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHN5bWJvbCBpZD0iQiI+PGc+PHBhdGggZD0iTTEuMzA1IDQxLjIwMkM1LjI1OSA1NC4zODYgMTcuNDg4IDY0IDMxLjk1OSA2NGMxNy42NzMgMCAzMi0xNC4zMjcgMzItMzJzLTE0LjMyNy0zMi0zMi0zMkMxNS4wMDEgMCAxLjEyNCAxMy4xOTMuMDI4IDI5Ljg3NGMyLjA3NCAzLjQ3NyAyLjg3OSA1LjYyOCAxLjI3NSAxMS4zMjh6IiBmaWxsPSJ1cmwoI0EpIi8+PHBhdGggZD0iTTMwLjMxIDIzLjk4NWwuMDAzLjE1OC03LjgzIDExLjM3NWMtMS4yNjgtLjA1OC0yLjU0LjE2NS0zLjc0OC42NjJhOC4xNCA4LjE0IDAgMCAwLTEuNDk4LjhMLjA0MiAyOS44OTNzLS4zOTggNi41NDYgMS4yNiAxMS40MjRsMTIuMTU2IDUuMDE2Yy42IDIuNzI4IDIuNDggNS4xMiA1LjI0MiA2LjI3YTguODggOC44OCAwIDAgMCAxMS42MDMtNC43ODIgOC44OSA4Ljg5IDAgMCAwIC42ODQtMy42NTZMNDIuMTggMzYuMTZsLjI3NS4wMDVjNi43MDUgMCAxMi4xNTUtNS40NjYgMTIuMTU1LTEyLjE4cy01LjQ0LTEyLjE2LTEyLjE1NS0xMi4xNzRjLTYuNzAyIDAtMTIuMTU1IDUuNDYtMTIuMTU1IDEyLjE3NHptLTEuODggMjMuMDVjLTEuNDU0IDMuNS01LjQ2NiA1LjE0Ny04Ljk1MyAzLjY5NGE2Ljg0IDYuODQgMCAwIDEtMy41MjQtMy4zNjJsMy45NTcgMS42NGE1LjA0IDUuMDQgMCAwIDAgNi41OTEtMi43MTkgNS4wNSA1LjA1IDAgMCAwLTIuNzE1LTYuNjAxbC00LjEtMS42OTVjMS41NzgtLjYgMy4zNzItLjYyIDUuMDUuMDc3IDEuNy43MDMgMyAyLjAyNyAzLjY5NiAzLjcycy42OTIgMy41Ni0uMDEgNS4yNDZNNDIuNDY2IDMyLjFhOC4xMiA4LjEyIDAgMCAxLTguMDk4LTguMTEzIDguMTIgOC4xMiAwIDAgMSA4LjA5OC04LjExMSA4LjEyIDguMTIgMCAwIDEgOC4xIDguMTExIDguMTIgOC4xMiAwIDAgMS04LjEgOC4xMTNtLTYuMDY4LTguMTI2YTYuMDkgNi4wOSAwIDAgMSA2LjA4LTYuMDk1YzMuMzU1IDAgNi4wODQgMi43MyA2LjA4NCA2LjA5NWE2LjA5IDYuMDkgMCAwIDEtNi4wODQgNi4wOTMgNi4wOSA2LjA5IDAgMCAxLTYuMDgxLTYuMDkzeiIvPjwvZz48L3N5bWJvbD48L3N2Zz4=");
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --theme-accent-color-hue: 222.39;
+        --theme-accent-color-80: oklch(80% 0.07 var(--theme-accent-color-hue));
+        --theme-accent-color-75: oklch(75% 0.07 var(--theme-accent-color-hue));
+        --theme-accent-color-70: oklch(70% 0.07 var(--theme-accent-color-hue));
+        --theme-accent-color-65: oklch(65% 0.07 var(--theme-accent-color-hue));
+        --theme-accent-color-60: oklch(60% 0.07 var(--theme-accent-color-hue));
+        --theme-accent-color-55: oklch(55% 0.07 var(--theme-accent-color-hue));
+        --theme-accent-color-50: oklch(50% 0.07 var(--theme-accent-color-hue));
+        --theme-accent-color-45: oklch(45% 0.07 var(--theme-accent-color-hue));
+        --theme-accent-color-40: oklch(40% 0.07 var(--theme-accent-color-hue));
+        --theme-accent-color-35: oklch(35% 0.07 var(--theme-accent-color-hue));
+        --theme-accent-color-30: oklch(30% 0.07 var(--theme-accent-color-hue));
+        --theme-accent-color-25: oklch(25% 0.07 var(--theme-accent-color-hue));
+        --theme-accent-color-20: oklch(20% 0.07 var(--theme-accent-color-hue));
+        /*====[ Text Colors ]===============================================*/
+        --theme-text-color: oklch(20% 0.13 195);
+        --theme-text-muted-color: oklch(30% 0 0);
+        --theme-text-disabled-color: oklch(30% 0 0);
+        --theme-text-color-note: oklch(30% 0 0);
+        --theme-text-color-em: oklch(30% 0 0);
+        --theme-text-selection-color: oklch(30% 0.11 202);
+        --theme-text-selection-background-color: oklch(0.17 0.07 203.07/50%);
+        --theme-heading-color: oklch(30% 0.13 195);
+        --theme-content-background-color: oklch(97% 0.05 98.56/89%);
+        --theme-triangle-header-background-color: var(--theme-accent-color-55);
+    }
+}
+
+html {
+    font-family: var(--font-family-fallback);
+    font-size: var(--font-size);
+}
+
+body {
+    font-family: var(--font-family-default);
+    color: var(--theme-text-color);
+    background-image: var(--theme-site-background-image);
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    animation-name: backgroundParallax;
+    animation-timing-function: linear;
+    animation-timeline: --scrollTimeline;
+    display: grid;
+    grid-template:
+        "WikiggHeader WikiggHeader   WikiggHeader WikiggHeader  WikiggHeader  WikiggHeader" 35px
+        ".            .              .            .             .             .           " var(--theme-site-logo-height) ".            .              .            TopNavigation Search        .           " auto
+        ".            LeftNavigation .            ContentBody   ContentBody   .           " auto
+        ".            LeftNavigation .            ContentFooter ContentFooter .           " auto
+        ".            LeftNavigation .            .             .             .           " auto
+        ".            LeftNavigation .            .             .             .           " 40vh
+        "WikiggFooter WikiggFooter   WikiggFooter WikiggFooter  WikiggFooter  WikiggFooter"
+        /5% auto 0.5rem 1fr auto 5%;
+}
+
+#wikigg-header {
+    grid-area: WikiggHeader;
+}
+
+.mw-notification {
+    background-color: var(--theme-accent-color-25);
+    border-radius: var(--theme-border-radius-inner);
+    font-size: initial;
+}
+
+.mw-body {
+    color: inherit;
+    margin: 0;
+}
+
+.vector-body {
+    /*Set the font size back to user agent*/
+    font-size: var(--font-size);
+
+    p {
+        line-height: var(--line-height);
+        margin-top: 0;
+        margin-bottom: 0.50em;
+    }
+}
+
+.content-wrapper,
+#mw-navigation {
+    display: contents;
+}
+
+/*====[ Left-hand side navbar ]==*/
+#mw-panel {
+    grid-area: LeftNavigation;
+    align-self: start;
+    width: 100%;
+    padding: 0;
+    font-size: 1.0rem;
+    color: var(--theme-text-color);
+}
+
+#p-search {
+    position: absolute;
+    top: -4rem;
+    right: 0;
+}
+
+/*====[ Top Navigation (Discussion, Edit, Watch, ..etc) ]====*/
+#mw-head {
+    grid-area: TopNavigation;
+    align-self: end;
+}
+
+/* 
+  We are going to span #mw-page-base from the top navigation to 
+  the content footer to apply the acrylic style
+*/
+#mw-page-base {
+    grid-area: TopNavigation-start/TopNavigation-start/ContentFooter-end/ContentFooter-end;
+    height: 100%;
+    background: transparent;
+    border-radius: var(--theme-border-radius-outer);
+    box-shadow: var(--theme-box-shadow);
+    backdrop-filter: var(--theme-blur-effect);
+    z-index: -1;
+}
+
+/*====[ Page Content Body ]====*/
+#content {
+    grid-area: ContentBody;
+    border: 0;
+    margin-left: 0;
+    padding: 2rem;
+    height: auto;
+    background-color: var(--theme-content-background-color);
+}
+
+/* For some page such as api.php, .mw-body is the only child, so take up all space. */
+.mw-body:first-child {
+    backdrop-filter: var(--theme-blur-effect);
+}
+
+/*====[ Wiki Footer ]====*/
+#footer {
+    grid-area: ContentFooter;
+    color: var(--theme-footer-text-color);
+    padding: 1rem;
+    margin: 0 var(--theme-box-border-width) var(--theme-box-border-width) var(--theme-box-border-width);
+    display: grid;
+    grid-template-columns: [l] 1fr 0fr [r];
+    grid-template-rows: [t] auto auto [b];
+    text-shadow: 0 0 4px #000;
+}
+
+/*====[ wiki.gg Footer ]====*/
+#wikigg-footer {
+    grid-area: WikiggFooter;
+    align-self: end;
+}
+
+/*====[ Logo ]===============================================*/
+#p-logo {
+    /* grid-area: Logo; */
+    position: absolute;
+    left: calc(50% - var(--theme-site-logo-width) / 2);
+    right: auto;
+    top: var(--wikigg-header-height);
+    width: var(--theme-site-logo-width);
+    height: var(--theme-site-logo-height);
+    background: var(--theme-site-logo-image) center center/var(--theme-site-logo-width) auto no-repeat;
+    filter: drop-shadow(0 0 5px black);
+    margin: 0;
+}
+
+/* Logo Flicker Fix 
+
+Use logo image as <a>'s background will sometime flicker when hovered on Firefox,
+I still don't know why, but move background to #p-logo can avoid this issue.
+*/
+.mw-wiki-logo {
+    width: var(--theme-site-logo-width);
+    height: var(--theme-site-logo-height);
+    margin: auto;
+    background: none;
+}
+
+/* Disable using image for bullet points */
+ul {
+    list-style-image: none;
+}
+
+/*==============================================================================================================
+  wiki.gg Top Bar
+==============================================================================================================*/
+div#p-personal ul {
+    white-space: nowrap;
+    /* for "log out" */
+}
+
+#p-personal .vector-menu-content #pt-anonuserpage,
+#p-personal .vector-menu-content #pt-userpage a {
+    padding-top: 0;
+    background-position: left center;
+}
+
+.i .note,
+.note-text {
+    color: var(--theme-text-color-note);
+}
+
+.pixel img,
+.pixel,
+#mw-imagepage-section-filehistory img {
+    image-rendering: pixelated;
+    /*for chrome*/
+    image-rendering: crisp-edges;
+    /*for firefox*/
+}
+
+.small {
+    font-size: 0.875em;
+}
+
+em {
+    filter: brightness(120%);
+}
+
+strong {
+    filter: brightness(120%);
+}
+
+.fullwidth,
+.full-width {
+    width: 100%;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+/* ".center" has width=100% rule, we don't want it, so use a different class name. */
+.aligncenter,
+.align-center {
+    text-align: center;
+}
+
+.alignleft,
+.align-left {
+    text-align: left;
+}
+
+.alignright,
+.align-right {
+    text-align: right;
+}
+
+/* clear fix for float block */
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix::before,
+.clearfix::after {
+    content: " ";
+    display: table;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+/* References smaller text than main */
+.references {
+    font-size: 90%;
+}
+
+/* Facilitate inline scary transclusion */
+.scary-transclusion p,
+.scary-transclusion .mw-parser-output {
+    display: inline;
+}
+
+/* hide last empty paragraph at the end */
+div.mw-parser-output>p:last-child>br:only-child {
+    display: none;
+}
+
+/* Fix empty parameter descriptions on api.php having no height, causing misalignments that seriously impede readability */
+.apihelp-parameters dd:empty::before {
+    content: " ";
+}
+
+.block {
+    display: block;
+}
+
+.inline {
+    display: inline;
+}
+
+.inline-block {
+    display: inline-block;
+}
+
+hr {
+    height: 3px;
+    background: linear-gradient(69deg, var(--theme-border-color) 0%, rgba(0, 212, 255, 0.0) 100%);
+    border-radius: 1.5px;
+
+    &.space {
+        height: 4px;
+        background: none;
+        border: 0;
+    }
+}
+
+.page-content .vertical-align-top * {
+    vertical-align: top;
+}
+
+.page-content .vertical-align-bottom * {
+    vertical-align: bottom;
+}
+
+/* Drowning Table No Border */
+.drowning-table-no-border {
+    border: 0;
+}
+
+/* Box at the top of all pages when the user has a new message on their User_talk: page */
+.usermessage {
+    background-color: var(--theme-box-background-color);
+    border-color: var(--theme-box-border-color);
+    color: var(--theme-text-color);
+}
+
+/***********************************************************************************************************
+ * interface layout and styles for widgets outside of content box
+ ********************************************************************************************************/
+:root {
+    --main-layout-topbar-height: 35px;
+    /* height of wiki.gg topbar */
+    /* width of side navbar, without gap */
+    /* whitespace width on most left and most right */
+    --main-layout-logo-box-height: 200px;
+    --main-layout-logo-offset: 1rem;
+    --main-layout-sidebar-width: 10rem;
+    --main-box-border-radius: 5px;
+    --main-inner-box-border-radius: calc(var(--main-box-border-radius) - var(--theme-box-border-width));
+    --main-top-padding: 2.0rem;
+    /* Removes second vertical scrollbar(mw 1.37 fix) */
+    overflow-y: unset;
+    /* must be unset or visible, can not be auto, or side ad will not be sticky */
+}
+
+/* arrow icon */
+.portal {
+    border-radius: var(--theme-border-radius-inner);
+    overflow: clip;
+    color: #fff;
+    margin-bottom: 1rem;
+    padding: 0;
+    background: var(--theme-navbar-tab-selected-background);
+    box-shadow: var(--theme-box-shadow);
+    backdrop-filter: var(--theme-blur-effect);
+
+    .vector-menu-heading {
+        margin: 0;
+        background: var(--background-triangle-single);
+        background-color: var(--theme-triangle-header-background-color);
+        background-blend-mode: overlay;
+        background-size: cover;
+
+        .vector-menu-heading-label {
+            margin-left: 0.5rem;
+            font-size: 1.0rem;
+            color: var(--theme-heading-color);
+            font-weight: 600;
+        }
+    }
+
+    .body {
+        background: none;
+        padding: 0;
+        margin: 0;
+
+        ul {
+            padding: 0.5rem;
+
+            li {
+                padding-left: 0.5rem;
+                font-size: 1rem;
+                line-height: inherit;
+                border-radius: var(--main-inner-box-border-radius);
+                transition: background-color 0.2s;
+
+                a {
+                    color: var(--theme-text-color);
+
+                    &:visited {
+                        color: var(--theme-text-color);
+                    }
+
+                    &.feedlink {
+                        /* "Atom" RSS Feed */
+                        text-indent: 14px;
+                        /* the icon is 12x12px, so 12px + 2px */
+                        background-position: 8px center;
+                        /* align icon with other text */
+                    }
+                }
+
+                &:hover {
+                    background-color: var(--theme-accent-color-30);
+
+                    a {
+                        color: var(--theme-link-hover-color);
+                    }
+                }
+            }
+        }
+    }
+
+    &.collapsed {
+        .vector-menu-heading {
+            border-radius: var(--main-inner-box-border-radius);
+
+            &::after {
+                border-width: 6px 5px 0 5px;
+            }
+        }
+    }
+}
+
+.mw-page-title-namespace,
+.mw-page-title-separator {
+    font-weight: 200;
+    font-style: italic;
+    color: var(--theme-text-color);
+}
+
+.mw-page-title-main {
+    b {
+        font-weight: 200;
+        color: var(--theme-text-color);
+    }
+}
+
+pre {
+    margin: 0;
+    background-color: var(--theme-accent-color-20);
+    color: #ffcc00;
+    border: 0;
+    border-radius: 0.5rem;
+
+    &.lua.source-lua {
+        font-size: 14px !important;
+    }
+
+    .mw-content-ltr & {
+        .mw-highlight-lines & {
+            padding: 1em;
+            box-shadow: none;
+        }
+    }
+}
+
+.mw-content-ltr {
+    .mw-editsection {
+        font-size: 0.75rem;
+        vertical-align: super;
+        margin-left: 0;
+        animation-name: fadeIn;
+        animation-timing-function: linear;
+        animation-duration: 200ms;
+        animation-delay: 100ms;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+    }
+}
+
+#contentSub,
+#contentSub2 {
+    margin: 0;
+    font-size: 0.875rem;
+    border-radius: var(--theme-border-radius-inner);
+
+    & .subpages {
+        color: transparent;
+
+        & a {
+            vertical-align: middle;
+            display: inline-flex;
+            align-items: center;
+            padding-left: 4px;
+
+            &::before {
+                content: "";
+                display: inline-block;
+                height: 0.5em;
+                width: 0.5em;
+                border-color: #fff;
+                border-style: solid;
+                border-width: 0 0 2px 2px;
+                margin: 0 0.25em 0 0;
+                transform: rotate(45deg);
+            }
+        }
+    }
+}
+
+/* User Profile box */
+.mw-message-box {
+    color: var(--theme-text-color);
+    border-radius: var(--theme-border-radius-inner);
+    background-color: var(--theme-accent-color-40);
+
+    &.mw-message-box-warning {
+        border-color: oklch(60% 0.18 11.65);
+        border-width: 0 0 0 1rem;
+        background-color: oklch(60% 0.18 11.65/20%);
+    }
+}
+
+#bodyContent {
+    display: flex;
+    flex-direction: column;
+}
+
+#mw-content-text {
+    flex: 1 1 auto;
+    min-height: 35em;
+}
+
+/* "category:" box */
+#catlinks {
+    background: var(--theme-accent-color-30);
+    border: 0;
+    border-radius: var(--theme-border-radius-inner);
+    margin-top: 1rem;
+    padding: calc(1rem / 2) 1rem;
+}
+
+.mw-footer li {
+    color: var(--theme-footer-text-color);
+}
+
+#footer a {
+    color: var(--theme-footer-link-color);
+}
+
+#footer a:hover {
+    color: var(--theme-footer-link-color-hover);
+}
+
+#footer-info {
+    font-size: 11px;
+    display: contents;
+}
+
+#footer-info {
+    font-size: 0.875rem;
+}
+
+#footer ul li {
+    font-size: inherit;
+    line-height: 1.5;
+    padding: 0;
+}
+
+#footer-icons {
+    grid-column: span 1/r;
+    grid-row: t/b;
+    place-self: end;
+}
+
+#footer #footer-info-lastmod {
+    grid-column: l/span 1;
+    grid-row: t/span 1;
+    place-self: start;
+    margin-bottom: 1em;
+}
+
+#footer #footer-info-copyright {
+    grid-column: l/span 1;
+    grid-row: span 1/b;
+    place-self: end stretch;
+    position: relative;
+    padding-right: 100px;
+}
+
+#footer-info-copyright img {
+    position: absolute;
+    right: 0;
+    /* mediawiki logo is 31px height, and this image has a 1px black border,
+     a small tweak to make them visually matched on size and position */
+    bottom: -1px;
+    height: 33px;
+    width: auto;
+}
+
+#footer-places,
+#footer>div {
+    display: none;
+}
+
+/*====[ Notification ]===============================================*/
+.mw-notification {
+    color: var(--theme-text-color);
+    border: 1px solid;
+    /* background: var(--theme-box-border-color); */
+    border-color: var(--theme-border-color);
+    box-shadow: var(--theme-border-color);
+    transform: none;
+}
+
+/*====[ postedit notification ]===============================================*/
+.postedit-container {
+    top: 4em;
+}
+
+/*====[ Notification boxes on the right, e.g. after patrolling an edit ]===============================================*/
+.mw-notification.mw-notification-type-error {
+    color: var(--theme-notice-red-text-color);
+    border-color: var(--theme-notice-red-text-color);
+}
+
+.mw-notification.mw-notification-type-warn {
+    color: var(--theme-notice-orange-text-color);
+    border-color: var(--theme-notice-orange-text-color);
+}
+
+blockquote {
+    /* width: fit-content; */
+    /* backdrop-filter: saturate(70%)  contrast(95%) blur(10px); */
+}
+
+#pagehistory li.selected,
+.mw-rcfilters-ui-changesListWrapperWidget .mw-changeslist-legend {
+    background-color: #214049;
+    color: inherit;
+}
+
+/** Border Color Style **/
+.borderimg img {
+    -webkit-filter: drop-shadow(0px 0px 10px #FFF);
+    filter: drop-shadow(0px 0px 3.5px #FFF) drop-shadow(0.5px 0.5px 0.5px #FFF);
+}
+
+.borderimg2 img {
+    -webkit-filter: drop-shadow(0px 0px 10px #000);
+    filter: drop-shadow(0px 0px 3.5px #000) drop-shadow(0.5px 0.5px 0.5px #000);
+}
+
+/* code and pre */
+pre,
+code,
+tt,
+kbd,
+samp,
+.mw-code,
+.mw-editfont-monospace,
+.diff-editfont-monospace .diff-context {
+    font-family: var(--font-family-monospace);
+}
+
+code {
+    background-color: #1a1a1a;
+    color: #ffcc00;
+    border: 0;
+    border-radius: 0.25rem;
+}
+
+/* Recent changes info box */
+.mw-changeslist-legend {
+    color: #000;
+}
+
+/* Searched information */
+.mw-search-profile-tabs {
+    background-color: transparent;
+}
+
+.mw-echo-ui-placeholderItemWidget {
+    color: #000;
+}
+
+/* Advanced Box */
+#mw-searchoptions {
+    background-color: transparent;
+}
+
+/* Overlay box */
+.ui-widget-overlay {
+    background: rgb(91 91 91 / 50%);
+}
+
+/* File information */
+#filetoc {
+    background-color: transparent;
+}
+
+.mw_metadata td {
+    background-color: transparent;
+}
+
+.mw-datatable th {
+    background-color: #3a3a3a;
+}
+
+.mw-datatable td {
+    background-color: transparent;
+}
+
+.mw-datatable tr:hover td {
+    background-color: #1F2827;
+}
+
+/***********************************************************************************************************
+ * common style for content box
+ ********************************************************************************************************/
+.fullwidth,
+.full-width {
+    width: 100%;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+/* ".center" has width=100% rule, we don't want it, so use a different class name. */
+.aligncenter,
+.align-center {
+    text-align: center;
+}
+
+.alignleft,
+.align-left {
+    text-align: left;
+}
+
+.alignright,
+.align-right {
+    text-align: right;
+}
+
+/* clear fix for float block */
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix::before,
+.clearfix::after {
+    content: " ";
+    display: table;
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+/***********************************************************************************************************
+ * css for specific pages
+ ********************************************************************************************************/
+/* hlist */
+.hlist ul {
+    margin: 0;
+    list-style: none;
+}
+
+.hlist li,
+.hlist ul ul {
+    display: inline;
+}
+
+.hlist li a {
+    white-space: nowrap;
+}
+
+.hlist ul ul::before {
+    content: "("
+}
+
+.hlist ul ul::after {
+    content: ")"
+}
+
+.hlist li::after {
+    content: " • ";
+}
+
+.hlist ul ul li::after {
+    content: "/";
+}
+
+.hlist li:last-child::after,
+.hlist ul ul li:last-child::after {
+    content: none;
+}
+
+li.gallerybox div.thumb {
+    background-color: transparent;
+    border: 0;
+}
+
+/* Mark redirects in Special:Allpages and Special:Watchlist */
+.allpagesredirect {
+    font-style: italic;
+}
+
+.allpagesredirect::after {
+    color: #808080;
+    content: " (redirect)"
+}
+
+.watchlistredir {
+    font-style: italic;
+}
+
+/* Giving headers and TOC a little extra space */
+.mw-prefs-buttons {
+    background-color: transparent;
+}
+
+fieldset {
+    border-color: var(--theme-accent-color-60);
+    border-radius: 4px;
+}
+
+:focus-visible {
+    outline: 0;
+}
+
+.mw-body-content .error {
+    font-size: normal;
+    color: rgb(245, 116, 116);
+}
+
+textarea {
+    border: 0;
+    border-radius: var(--theme-border-radius-inner);
+    font-size: 1rem;
+    color: var(--theme-text-color);
+    background-color: var(--theme-accent-color-20);
+    padding: 1ch;
+}
+
+input {
+    border: 0;
+    border-radius: var(--theme-border-radius-inner);
+    font-size: 1rem;
+    color: var(--theme-text-color);
+    background-color: var(--theme-accent-color-20);
+    padding-left: 1ch;
+
+    &[type=submit] {
+        color: var(--theme-control-text-color);
+    }
+}
+
+::placeholder {
+    color: var(--theme-text-color-placeholder);
+}
+
+::file-selector-button {
+    background-color: var(--theme-accent-color-50);
+    font-family: var(--font-family-default);
+    color: var(--theme-text-color);
+    border: none;
+    border-radius: var(--theme-button-border-radius);
+    padding: 0.5em;
+    margin-right: 1ch;
+}
+
+::selection {
+    color: var(--theme-text-selection-color);
+    background-color: var(--theme-text-selection-background-color);
+}
+
+select {
+    border: 0;
+    border-radius: 4px;
+    color: var(--theme-text-color);
+    padding: 0.5rem;
+}
+
+option {
+    background-color: white;
+}
+
+.mw-destfile-warning {
+    border: 0;
+    border-radius: var(--theme-border-radius-inner);
+    padding: .5em 1em;
+    margin-bottom: 1em;
+    color: var(--theme-text-color);
+    background-color: oklch(0.4 0.10 31.0 / 1.0);
+}

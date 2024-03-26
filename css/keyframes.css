@@ -1,0 +1,13 @@
+/*====[ Keyframe Animations ]=============================================================
+    Notes: 
+        None
+========================================================================================*/
+@keyframes backgroundParallax {
+    from {
+        background-position-y: var(--wikigg-header-height);
+    }
+
+    to {
+        background-position-y: 100%;
+    }
+}
