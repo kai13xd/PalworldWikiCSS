@@ -32,6 +32,10 @@
     --theme-link-new-active-color: var(--theme-link-active-color);
     --theme-link-new-focus-color: var(--theme-link-focus-color);
     --theme-link-new-visited-color: var(--theme-link-new-color);
+    /*====[ User Link Colors ]============================*/
+    --theme-link-user-color: oklch(80% 0.1 220);
+    --theme-link-user-administrator-color: oklch(80% 0.25 285);
+    --theme-link-user-administrator-textshadow: 0px 0px 6px oklch(20% 0.25 280);
 
     @media (prefers-color-scheme: light) {
         --theme-link-font-weight: 600;
@@ -61,10 +65,6 @@
         --theme-link-new-focus-color: var(--theme-link-focus-color);
         --theme-link-new-visited-color: var(--theme-link-new-color);
     }
-}
-
-a:local-link {
-    color: orange !important;
 }
 
 .tooltip {
@@ -165,27 +165,6 @@ a {
         }
     }
 
-    &.mw-userlink {
-        font-weight: 700;
-
-        &[title="User:Alex4401"],
-        &[title="User:Andrew323"],
-        &[title="User:Azgoodaz"],
-        &[title="User:Chyril"],
-        &[title="User:Game widow"],
-        &[title="User:Karmaworks"],
-        &[title="User:Mr Pie 5"],
-        &[title="User:Pcj"],
-        &[title="User:ReedemtheD3ad !"],
-        &[title="User:RheingoldRiver"],
-        &[title="User:SlyAceZeta"],
-        &[title="User:Stygies VIII"],
-        &[title="User:Westgrass"],
-        &[title="User:Wikiadmin"] {
-            color: hsl(273, 62%, 80%);
-        }
-    }
-
     /*====[ New Page Links ]====*/
     &.new {
         color: var(--theme-link-new-color);
@@ -217,6 +196,30 @@ a {
             &:focus {
                 color: var(--theme-link-new-focus-color);
             }
+        }
+    }
+
+    &.mw-userlink,
+    &.mw-userlink.new {
+        font-weight: 800;
+        color: var(--theme-link-user-color);
+
+        &[title="User:Alex4401"],
+        &[title="User:Andrew323"],
+        &[title="User:Azgoodaz"],
+        &[title="User:Chyril"],
+        &[title="User:Game widow"],
+        &[title="User:Karmaworks"],
+        &[title="User:Mr Pie 5"],
+        &[title="User:Pcj"],
+        &[title="User:ReedemtheD3ad !"],
+        &[title="User:RheingoldRiver"],
+        &[title="User:SlyAceZeta"],
+        &[title="User:Stygies VIII"],
+        &[title="User:Westgrass"],
+        &[title="User:Wikiadmin"] {
+            color: var(--theme-link-user-administrator-color);
+            text-shadow: var(--theme-link-user-administrator-textshadow);
         }
     }
 }

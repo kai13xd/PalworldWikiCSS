@@ -29,20 +29,11 @@
             linkElement.remove();
             CSSFiles.forEach(function (file) {
                 const result =
-                    `<link rel="stylesheet" href="http://localhost/css/${file}">`;
+                    `<link rel="stylesheet" href="http://192.168.0.18/css/${file}">`;
                 $("head").append(result);
             });
             console.log("Removed Common.css link");
         }
     }
 
-    for (const element of document.getElementsByClassName("mw-editsection")) {
-        console.log("found", element);
-        const children = element.getElementsByTagName("a");
-        const visualEdit = children[0];
-        const editSource = children[1];
-        visualEdit.textContent = "Edit";
-        editSource.textContent = "Edit Source";
-        element.replaceChildren(visualEdit, editSource);
-    }
 })();

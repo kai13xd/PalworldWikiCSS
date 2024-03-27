@@ -23,29 +23,8 @@
         line-height: normal;
         padding: 0;
         margin-top: 2rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
         border: 0;
-        outline: 1px dotted yellow;
-
-        &:is(h2)~:not(h2) {
-            margin-left: 1rem;
-            outline: 1px dotted red;
-
-            &:is(h3)~ :is(h2 ~ :not(h2 + *, h3))& {
-                outline: 1px dotted blue;
-                margin-left: 2rem;
-
-                &:is(h4)~ :is(h3 ~ :not(h3 + *, h4))& {
-                    outline: 1px dotted magenta;
-                    margin-left: 3rem;
-
-                    &:is(h5)~:is(h4 ~ :not(h4 + *, h5))& {
-                        outline: 1px dotted cyan;
-                        margin-left: 4rem;
-                    }
-                }
-            }
-        }
 
         &:has(.mw-page-title-main, .mw-editsection) {
             &:is(h1) {
@@ -54,12 +33,12 @@
 
             &:is(h2) {
                 --height: 3px;
-                --width: 75%;
+                --width: 80%;
             }
 
             &:is(h3, h4, h5, h6) {
                 --height: 2px;
-                --width: 33%;
+                --width: 50%;
             }
 
             --neg-height: calc(0px - var(--height));
@@ -77,7 +56,7 @@
                 margin-bottom: 0;
                 background-image: linear-gradient(to right, var(--start-color) 0%, transparent 100%);
                 transition: opacity 150ms linear;
-                opacity: 30%;
+                opacity: 40%;
             }
 
             span:last-child::after {
@@ -87,7 +66,7 @@
                 height: var(--height);
                 width: var(--width);
                 background-image: linear-gradient(to right, var(--theme-link-hover-color) 0%, transparent 100%);
-                transition: all 150ms linear;
+                transition: opacity 150ms linear;
                 opacity: 0;
             }
 
