@@ -30,10 +30,9 @@
     .portal {
         background: none;
         box-shadow: none;
-        /* border: 0; */
-        /* overflow: visible; */
         margin: 0;
         border-radius: 0;
+        z-index: 1;
 
         /* min-width: 8rem; */
         .vector-menu-heading {
@@ -47,12 +46,12 @@
         .body {
             display: none;
             position: absolute;
+            backdrop-filter: var(--theme-blur-effect);
 
             .menu {
                 position: relative;
                 min-width: 8rem;
-                background-color: var(--theme-accent-color-25);
-                z-index: 1;
+                background-color: var(--theme-content-background-color);
 
                 .mw-list-item {
                     padding: 9px 12px 8px;

@@ -35,5 +35,24 @@
             console.log("Removed Common.css link");
         }
     }
+    const ViewHistoryTab = $("#ca-history");
+    const WatchTab = $("#ca-watch");
+    const MoreTabList = $("#p-cactions ul");
+    const RightNavigation = $("#p-views div");
+
+    const TabsMediaQuery = window.matchMedia('(max-width: 800px)');
+    TabsMediaQuery.onchange = (query) => {
+        if (query.matches) {
+            console.log("owo");
+            ViewHistoryTab.appendTo(MoreTabList)
+            WatchTab.appendTo(MoreTabList)
+
+        }
+        else {
+            ViewHistoryTab.appendTo(RightNavigation)
+            WatchTab.appendTo(RightNavigation)
+        }
+    }
+    TabsMediaQuery.onchange(TabsMediaQuery);
 
 })();

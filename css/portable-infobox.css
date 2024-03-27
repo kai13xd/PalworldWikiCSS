@@ -80,6 +80,7 @@
         background-image: var(--background-triangle-single);
         background-blend-mode: overlay;
         background-color: var(--theme-triangle-header-background-color);
+        background-size: contain;
         border-radius: 5px 5px 0px 0px;
     }
 

@@ -14,6 +14,12 @@
     --h6-font-size: 1.125rem;
 }
 
+.tabber__panel:not([data-tabber-page-title]) .mw-editsection {
+    /* This is a fix for heading divider margins inside tabbers */
+    display: inline;
+    visibility: hidden;
+}
+
 .mw-body,
 .vector-body {
     :is(h1, h2, h3, h4, h5, h6) {
@@ -29,6 +35,7 @@
         &:has(.mw-page-title-main, .mw-editsection) {
             &:is(h1) {
                 --height: 4px;
+                --width: 100%;
             }
 
             &:is(h2) {
@@ -42,9 +49,7 @@
             }
 
             --neg-height: calc(0px - var(--height));
-            --border-radius: calc(var(--height) / 3);
-            --start-color: var(--theme-heading-color);
-            --end-color: oklch(from var(--theme-heading-color) l c h / 100%);
+            --border-radius: calc(var(--height) / 4);
 
             &::after {
                 content: "";
@@ -54,12 +59,12 @@
                 height: var(--height);
                 width: var(--width);
                 margin-bottom: 0;
-                background-image: linear-gradient(to right, var(--start-color) 0%, transparent 100%);
+                background-image: linear-gradient(to right, var(--theme-heading-color) 0%, transparent 100%);
                 transition: opacity 150ms linear;
                 opacity: 40%;
             }
 
-            span:last-child::after {
+            .mw-editsection-bracket:last-child::after {
                 content: "";
                 display: block;
                 border-radius: var(--border-radius);
@@ -75,7 +80,7 @@
                     opacity: 0;
                 }
 
-                span:last-child::after {
+                .mw-editsection-bracket:last-child::after {
                     opacity: 100%;
                 }
             }

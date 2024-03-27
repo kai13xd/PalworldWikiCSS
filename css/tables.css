@@ -56,18 +56,18 @@
     border-radius: var(--theme-table-border-radius);
     overflow: clip;
     box-shadow: var(--theme-table-box-shadow);
+    text-wrap: pretty;
 
     caption {
-        white-space: nowrap;
+        white-space: wrap;
         /* color: #fff; */
         font-size: 1.25rem;
-        font-weight: 600;
     }
 
     tr:has(th) {}
 
     th {
-        font-weight: 600;
+        text-wrap: nowrap;
         transition: background-color 0.2s;
     }
 

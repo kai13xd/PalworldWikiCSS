@@ -36,10 +36,14 @@
     --theme-search-suggestions-special-label-text-color-hover: var(--theme-text-color);
 }
 
+
+
 /*==============================================================================
-    Page Menu Tabs
+    Top Navigation Tabs (Discussion, Edit, Watch, etc)
 ==============================================================================*/
 #mw-head {
+    grid-area: TopNavigation;
+    align-self: end;
     margin-top: 1.0rem;
     position: relative;
 }

@@ -128,7 +128,6 @@ a {
 
     /*====[ Regular Link Defaults ]====*/
     &:link {
-        text-wrap: nowrap;
         text-decoration: none;
         transition-duration: 0.1s;
         transition-property: color;
