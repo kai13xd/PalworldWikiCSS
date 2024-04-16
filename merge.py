@@ -2,30 +2,36 @@ from glob import glob
 import tinycss2 as tcss
 import os
 
-def IsComment(node):
-    if node.type == 'comment':
-        return True
-    elif node.type == 'whitespace':
-        node.value = '\n'
-    elif node.type == 'qualified-rule':
-        node.content = [node for node in node.content if not IsComment(node)]
-    else:
-        print(node.type)
-    return False
+def RemoveComments(nodes: list):
+    index = 0
+    for node in nodes:
+        if node.type == 'comment':
+            nodes.pop(index)
 
-
-def AddCommentNode(*comment:str):
+        if hasattr(node,"content") and node.content:
+            node.content = RemoveComments(node.content)
+            
+        if hasattr(node,"prelude") and node.prelude:
+            node.prelude = RemoveComments(node.prelude)
+            
+        index += 1
+        
+    return nodes
+    
+def CreateCommentNode(*comment:str):
     result = "\n\t".join(comment)
     result = f"{"="*96}\n\t{result}\n{"="*96}"
     return tcss.tokenizer.Comment(0,0,result)
 
-def AddNewLineNode(count:int = 1):
+def CreateNewLineNode(count:int = 1):
     return tcss.tokenizer.WhitespaceToken(0,0,"\n" * count)
 
 if __name__ == "__main__":
     os.system("cls" if os.name == "nt" else "clear")
     
     CSSNodes = []
+    
+    # This array determines concatenation order
     CSSFiles = ["css/root.css",
                 "css/ads.css",
                 "css/diff.css",
@@ -52,10 +58,14 @@ if __name__ == "__main__":
     for filepath in CSSFiles:
         with open(filepath) as f:
             CSSNodes+= tcss.parse_stylesheet(f.read())
-            CSSNodes.append(AddNewLineNode())
-            CSSNodes.append(AddNewLineNode())
+            CSSNodes.append(CreateNewLineNode())
+            CSSNodes.append(CreateNewLineNode())
 
+    CSSNodes = RemoveComments(CSSNodes)
+    
+    CSSNodes.insert(0,CreateCommentNode("This is a merged stylesheet. For editing see https://github.com/kai13xd/PalworldWikiCSS"))
+    CSSNodes.insert(1,CreateNewLineNode())
     with open('merged.css','w+') as f:
         for line in tcss.serialize(CSSNodes).split('\n'):
-            f.write(line.replace("/palworld.wiki.gg/","") + '\n')
+            f.write(line.replace("https://palworld.wiki.gg/","/") + '\n')
     
