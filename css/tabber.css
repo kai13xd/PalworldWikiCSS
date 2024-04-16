@@ -38,7 +38,7 @@
         transition-property: transform, border-radius;
     }
 
-    &[aria-selected='true'],
+    &[aria-selected=true],
     &:hover {
         background-color: var(--theme-triangle-header-background-color);
         border-bottom-left-radius: 0;
@@ -50,4 +50,8 @@
             color: var(--theme-heading-color);
         }
     }
+}
+
+[aria-hidden=true] {
+    display: none;
 }
