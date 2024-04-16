@@ -40,7 +40,7 @@
         display: block;
         height: 100px;
         width: 100%;
-        background-image: url("//palworld.wiki.gg/images/c/c0/Anubis_render.png");
+        background-image: url("https://palworld.wiki.gg/images/c/c0/Anubis_render.png");
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
@@ -54,9 +54,9 @@
 }
 
 #mp-info .mp-content {
-    display: flex;
-    margin-bottom: 1rem;
-}
+        display: flex;
+        margin-bottom: 1rem;
+    }
 
 #mp-info {
     grid-area: info
@@ -82,7 +82,7 @@
         content: "";
         max-width: 250px;
         width: 50%;
-        background-image: url("//palworld.wiki.gg/images/e/e3/Grizzbolt_render.png");
+        background-image: url("https://palworld.wiki.gg/images/e/e3/Grizzbolt_render.png");
         background-repeat: no-repeat;
         background-size: contain;
         background-position: left center
@@ -97,7 +97,7 @@
     text-align: center;
     justify-content: space-around;
     padding: 0 0%;
-    /* background-image: url("//palworld.wiki.gg/images/0/0a/Nitewing_render.png"), url("//palworld.wiki.gg/images/5/5b/Faleris_render.png"); */
+    /* background-image: url("https://palworld.wiki.gg/images/0/0a/Nitewing_render.png"), url("https://palworld.wiki.gg/images/5/5b/Faleris_render.png"); */
     background-repeat: no-repeat;
     background-position: left top, right top;
     background-size: auto 70%;

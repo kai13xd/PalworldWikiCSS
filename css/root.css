@@ -11,9 +11,9 @@
     --wikigg-primary-color: #e74485;
     --wikigg-secondary-color: #000538;
     /*====[ Site Background ]=================================================*/
-    --theme-site-background-image: url("//palworld.wiki.gg/images/9/97/Landscape.png");
+    --theme-site-background-image: url("https://palworld.wiki.gg/images/9/97/Landscape.png");
     /*====[ Site logo ]=======================================================*/
-    --theme-site-logo-image: url("//palworld.wiki.gg/images/e/e6/Site-logo.png?bd301");
+    --theme-site-logo-image: url("https://palworld.wiki.gg/images/e/e6/Site-logo.png?bd301");
     --theme-site-logo-width: 250px;
     --theme-site-logo-height: 200px;
     /*====[ Font Stack ]======================================================*/
