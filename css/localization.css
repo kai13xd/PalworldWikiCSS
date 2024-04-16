@@ -2,18 +2,18 @@
     Notes: 
         These selectors are meant for switching the font-family for non-English text.
 ========================================================================================*/
-#ja {
+.ja {
     font-family: var(--font-family-japanese);
 }
 
-#ko {
+.ko {
     font-family: var(--font-family-korean);
 }
 
-#zh-Hant {
+.zh-Hant {
     font-family: var(--font-family-traditional-chinese);
 }
 
-#zh-Hans {
+.zh-Hans {
     font-family: var(--font-family-simplified-chinese);
 }
