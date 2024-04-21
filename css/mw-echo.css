@@ -23,15 +23,15 @@
 }
 
 .mw-echo-ui-notificationsInboxWidget-toolbarWrapper {
-    background-color: var(--theme-accent-color-25);
+    background-color: var(--theme-accent-color-200);
 }
 
 .mw-echo-ui-notificationItemWidget-unread {
-    background-color: var(--theme-accent-color-25);
+    background-color: var(--theme-accent-color-200);
     border: 0;
     color: white;
 
     &:hover {
-        background-color: var(--theme-accent-color-30);
+        background-color: var(--theme-accent-color-300);
     }
 }

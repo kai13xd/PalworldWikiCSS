@@ -53,6 +53,7 @@ if __name__ == "__main__":
                 "css/video.css",
                 "css/visual-editor.css",
                 "css/wiki-templates.css",
+                "css/light.css",
             ]
 
     for filepath in CSSFiles:

@@ -11,7 +11,7 @@
 
 .tabber__section {
     /* background-color: oklch(0.4 0.05 203 / 0.3); */
-    border-top: 2px solid var(--theme-accent-color-40);
+    border-top: 2px solid var(--theme-accent-color-400);
 }
 
 .tabber__panel {

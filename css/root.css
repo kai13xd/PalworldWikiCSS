@@ -32,40 +32,23 @@
         See https://oklch.com/
     ========================================================================*/
     --theme-accent-color-hue: 203.07;
-    --theme-accent-color-80: oklch(80% 0.1817 var(--theme-accent-color-hue));
-    --theme-accent-color-75: oklch(75% 0.1697 var(--theme-accent-color-hue));
-    --theme-accent-color-70: oklch(70% 0.1588 var(--theme-accent-color-hue));
-    --theme-accent-color-65: oklch(65% 0.1479 var(--theme-accent-color-hue));
-    --theme-accent-color-60: oklch(60% 0.1360 var(--theme-accent-color-hue));
-    --theme-accent-color-55: oklch(55% 0.1251 var(--theme-accent-color-hue));
-    --theme-accent-color-50: oklch(50% 0.1131 var(--theme-accent-color-hue));
-    --theme-accent-color-45: oklch(45% 0.1022 var(--theme-accent-color-hue));
-    --theme-accent-color-40: oklch(40% 0.0903 var(--theme-accent-color-hue));
-    --theme-accent-color-35: oklch(35% 0.0794 var(--theme-accent-color-hue));
-    --theme-accent-color-30: oklch(30% 0.0674 var(--theme-accent-color-hue));
-    --theme-accent-color-25: oklch(25% 0.0565 var(--theme-accent-color-hue));
-    --theme-accent-color-20: oklch(20% 0.0446 var(--theme-accent-color-hue));
-    --theme-grayscale-color-80: oklch(80% 0 0);
-    --theme-grayscale-color-75: oklch(75% 0 0);
-    --theme-grayscale-color-70: oklch(70% 0 0);
-    --theme-grayscale-color-65: oklch(65% 0 0);
-    --theme-grayscale-color-60: oklch(60% 0 0);
-    --theme-grayscale-color-55: oklch(55% 0 0);
-    --theme-grayscale-color-50: oklch(50% 0 0);
-    --theme-grayscale-color-45: oklch(45% 0 0);
-    --theme-grayscale-color-40: oklch(40% 0 0);
-    --theme-grayscale-color-35: oklch(35% 0 0);
-    --theme-grayscale-color-30: oklch(30% 0 0);
-    --theme-grayscale-color-25: oklch(25% 0 0);
-    --theme-grayscale-color-20: oklch(20% 0 0);
-    --theme-grayscale-color-15: oklch(15% 0 0);
-    --theme-grayscale-color-10: oklch(10% 0 0);
+    --theme-accent-color-1000: oklch(80% 0.1817 var(--theme-accent-color-hue));
+    --theme-accent-color-900: oklch(75% 0.1697 var(--theme-accent-color-hue));
+    --theme-accent-color-800: oklch(70% 0.1588 var(--theme-accent-color-hue));
+    --theme-accent-color-700: oklch(80% 0.1479 var(--theme-accent-color-hue));
+    --theme-accent-color-600: oklch(70% 0.1360 var(--theme-accent-color-hue));
+    --theme-accent-color-500: oklch(60% 0.1251 var(--theme-accent-color-hue));
+    --theme-accent-color-400: oklch(50% 0.1131 var(--theme-accent-color-hue));
+    --theme-accent-color-300: oklch(40% 0.1022 var(--theme-accent-color-hue));
+    --theme-accent-color-200: oklch(30% 0.0903 var(--theme-accent-color-hue));
+    --theme-accent-color-100: oklch(20% 0.0794 var(--theme-accent-color-hue));
+
     /*====[ Scrollbar ]===================================================*/
     scroll-timeline: --scrollTimeline y;
-    scrollbar-color: var(--theme-accent-color-80) var(--wikigg-secondary-color);
+    scrollbar-color: var(--theme-accent-color-800) var(--wikigg-secondary-color);
     scroll-behavior: smooth;
     /*====[ Borders ]===============================================*/
-    --theme-border-color: var(--theme-accent-color-50);
+    --theme-border-color: var(--theme-accent-color-500);
     --theme-border-radius-outer: 1rem;
     --theme-border-radius-inner: calc(var(--theme-border-radius-outer) - 0.5rem);
     /*====[ Text Colors ]===============================================*/
@@ -79,7 +62,7 @@
     --theme-text-code-color: oklch(85% 0.175 176.82);
     --theme-heading-color: oklch(90% 0.03 195);
     --theme-content-background-color: oklch(15% 0.0537 var(--theme-accent-color-hue) / 85%);
-    --theme-triangle-header-background-color: var(--theme-accent-color-30);
+    --theme-triangle-header-background-color: var(--theme-accent-color-300);
     --theme-content-border-width: 0px;
     --theme-content-border-style: var(--theme-box-border-style);
     --theme-content-border-color: var(--theme-box-border-color);
@@ -150,36 +133,6 @@
     --icon-steam: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2aWV3Qm94PSIwIDAgNjUgNjUiIGZpbGw9IiNmZmYiPjx1c2UgeGxpbms6aHJlZj0iI0IiIHg9Ii41IiB5PSIuNSIvPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0iQSIgeDI9IjUwJSIgeDE9IjUwJSIgeTI9IjEwMCUiIHkxPSIwJSI+PHN0b3Agc3RvcC1jb2xvcj0iIzExMWQyZSIgb2Zmc2V0PSIwJSIvPjxzdG9wIHN0b3AtY29sb3I9IiMwNTE4MzkiIG9mZnNldD0iMjEuMiUiLz48c3RvcCBzdG9wLWNvbG9yPSIjMGExYjQ4IiBvZmZzZXQ9IjQwLjclIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzEzMmU2MiIgb2Zmc2V0PSI1OC4xJSIvPjxzdG9wIHN0b3AtY29sb3I9IiMxNDRiN2UiIG9mZnNldD0iNzMuOCUiLz48c3RvcCBzdG9wLWNvbG9yPSIjMTM2NDk3IiBvZmZzZXQ9Ijg3LjMlIi8+PHN0b3Agc3RvcC1jb2xvcj0iIzEzODdiOCIgb2Zmc2V0PSIxMDAlIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHN5bWJvbCBpZD0iQiI+PGc+PHBhdGggZD0iTTEuMzA1IDQxLjIwMkM1LjI1OSA1NC4zODYgMTcuNDg4IDY0IDMxLjk1OSA2NGMxNy42NzMgMCAzMi0xNC4zMjcgMzItMzJzLTE0LjMyNy0zMi0zMi0zMkMxNS4wMDEgMCAxLjEyNCAxMy4xOTMuMDI4IDI5Ljg3NGMyLjA3NCAzLjQ3NyAyLjg3OSA1LjYyOCAxLjI3NSAxMS4zMjh6IiBmaWxsPSJ1cmwoI0EpIi8+PHBhdGggZD0iTTMwLjMxIDIzLjk4NWwuMDAzLjE1OC03LjgzIDExLjM3NWMtMS4yNjgtLjA1OC0yLjU0LjE2NS0zLjc0OC42NjJhOC4xNCA4LjE0IDAgMCAwLTEuNDk4LjhMLjA0MiAyOS44OTNzLS4zOTggNi41NDYgMS4yNiAxMS40MjRsMTIuMTU2IDUuMDE2Yy42IDIuNzI4IDIuNDggNS4xMiA1LjI0MiA2LjI3YTguODggOC44OCAwIDAgMCAxMS42MDMtNC43ODIgOC44OSA4Ljg5IDAgMCAwIC42ODQtMy42NTZMNDIuMTggMzYuMTZsLjI3NS4wMDVjNi43MDUgMCAxMi4xNTUtNS40NjYgMTIuMTU1LTEyLjE4cy01LjQ0LTEyLjE2LTEyLjE1NS0xMi4xNzRjLTYuNzAyIDAtMTIuMTU1IDUuNDYtMTIuMTU1IDEyLjE3NHptLTEuODggMjMuMDVjLTEuNDU0IDMuNS01LjQ2NiA1LjE0Ny04Ljk1MyAzLjY5NGE2Ljg0IDYuODQgMCAwIDEtMy41MjQtMy4zNjJsMy45NTcgMS42NGE1LjA0IDUuMDQgMCAwIDAgNi41OTEtMi43MTkgNS4wNSA1LjA1IDAgMCAwLTIuNzE1LTYuNjAxbC00LjEtMS42OTVjMS41NzgtLjYgMy4zNzItLjYyIDUuMDUuMDc3IDEuNy43MDMgMyAyLjAyNyAzLjY5NiAzLjcycy42OTIgMy41Ni0uMDEgNS4yNDZNNDIuNDY2IDMyLjFhOC4xMiA4LjEyIDAgMCAxLTguMDk4LTguMTEzIDguMTIgOC4xMiAwIDAgMSA4LjA5OC04LjExMSA4LjEyIDguMTIgMCAwIDEgOC4xIDguMTExIDguMTIgOC4xMiAwIDAgMS04LjEgOC4xMTNtLTYuMDY4LTguMTI2YTYuMDkgNi4wOSAwIDAgMSA2LjA4LTYuMDk1YzMuMzU1IDAgNi4wODQgMi43MyA2LjA4NCA2LjA5NWE2LjA5IDYuMDkgMCAwIDEtNi4wODQgNi4wOTMgNi4wOSA2LjA5IDAgMCAxLTYuMDgxLTYuMDkzeiIvPjwvZz48L3N5bWJvbD48L3N2Zz4=");
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        --theme-accent-color-hue: 222.39;
-        --theme-accent-color-80: oklch(80% 0.07 var(--theme-accent-color-hue));
-        --theme-accent-color-75: oklch(75% 0.07 var(--theme-accent-color-hue));
-        --theme-accent-color-70: oklch(70% 0.07 var(--theme-accent-color-hue));
-        --theme-accent-color-65: oklch(65% 0.07 var(--theme-accent-color-hue));
-        --theme-accent-color-60: oklch(60% 0.07 var(--theme-accent-color-hue));
-        --theme-accent-color-55: oklch(55% 0.07 var(--theme-accent-color-hue));
-        --theme-accent-color-50: oklch(50% 0.07 var(--theme-accent-color-hue));
-        --theme-accent-color-45: oklch(45% 0.07 var(--theme-accent-color-hue));
-        --theme-accent-color-40: oklch(40% 0.07 var(--theme-accent-color-hue));
-        --theme-accent-color-35: oklch(35% 0.07 var(--theme-accent-color-hue));
-        --theme-accent-color-30: oklch(30% 0.07 var(--theme-accent-color-hue));
-        --theme-accent-color-25: oklch(25% 0.07 var(--theme-accent-color-hue));
-        --theme-accent-color-20: oklch(20% 0.07 var(--theme-accent-color-hue));
-        /*====[ Text Colors ]===============================================*/
-        --theme-text-color: oklch(20% 0.13 195);
-        --theme-text-muted-color: oklch(30% 0 0);
-        --theme-text-disabled-color: oklch(30% 0 0);
-        --theme-text-color-note: oklch(30% 0 0);
-        --theme-text-color-em: oklch(30% 0 0);
-        --theme-text-selection-color: oklch(30% 0.11 202);
-        --theme-text-selection-background-color: oklch(0.17 0.07 203.07/50%);
-        --theme-heading-color: oklch(30% 0.13 195);
-        --theme-content-background-color: oklch(97% 0.05 98.56/89%);
-        --theme-triangle-header-background-color: var(--theme-accent-color-55);
-    }
-}
-
 html {
     font-family: var(--font-family-fallback);
     font-size: var(--font-size);
@@ -213,7 +166,7 @@ body {
 }
 
 .mw-notification {
-    background-color: var(--theme-accent-color-25);
+    background-color: var(--theme-accent-color-200);
     border-radius: var(--theme-border-radius-inner);
     font-size: initial;
 }
@@ -556,7 +509,7 @@ hr {
                 }
 
                 &:hover {
-                    background-color: var(--theme-accent-color-30);
+                    background-color: var(--theme-accent-color-300);
 
                     a {
                         color: var(--theme-link-hover-color);
@@ -637,7 +590,7 @@ hr {
 .mw-message-box {
     color: var(--theme-text-color);
     border-radius: var(--theme-border-radius-inner);
-    background-color: var(--theme-accent-color-40);
+    background-color: var(--theme-accent-color-400);
 
     &.mw-message-box-warning {
         border-color: oklch(60% 0.18 11.65);
@@ -658,7 +611,7 @@ hr {
 
 /* "category:" box */
 #catlinks {
-    background: var(--theme-accent-color-30);
+    background: var(--theme-accent-color-300);
     border: 0;
     border-radius: var(--theme-border-radius-inner);
     margin-top: 1rem;
@@ -789,14 +742,14 @@ samp,
 }
 
 code {
-    background-color: var(--theme-accent-color-20);
+    background-color: var(--theme-accent-color-200);
     color: var(--theme-text-code-color);
     border: 0;
     border-radius: 0.25rem;
 }
 
 pre {
-    background-color: var(--theme-accent-color-20);
+    background-color: var(--theme-accent-color-200);
     color: var(--theme-text-code-color);
     border: 0;
     border-radius: 0.5rem;
@@ -962,7 +915,7 @@ li.gallerybox div.thumb {
 }
 
 fieldset {
-    border-color: var(--theme-accent-color-60);
+    border-color: var(--theme-accent-color-600);
     border-radius: 4px;
 }
 
@@ -980,7 +933,7 @@ textarea {
     border-radius: var(--theme-border-radius-inner);
     font-size: 1rem;
     color: var(--theme-text-color);
-    background-color: var(--theme-accent-color-20);
+    background-color: var(--theme-accent-color-200);
     padding: 1ch;
 }
 
@@ -989,7 +942,7 @@ input {
     border-radius: var(--theme-border-radius-inner);
     font-size: 1rem;
     color: var(--theme-text-color);
-    background-color: var(--theme-accent-color-20);
+    background-color: var(--theme-accent-color-200);
     padding-left: 1ch;
 
     &[type=submit] {
@@ -1002,7 +955,7 @@ input {
 }
 
 ::file-selector-button {
-    background-color: var(--theme-accent-color-50);
+    background-color: var(--theme-accent-color-500);
     font-family: var(--font-family-default);
     color: var(--theme-text-color);
     border: none;

@@ -22,6 +22,7 @@
         "video.css",
         "visual-editor.css",
         "wiki-templates.css",
+        "light.css",
     ];
 
     for (const linkElement of document.getElementsByTagName("link")) {
@@ -29,7 +30,7 @@
             linkElement.remove();
             CSSFiles.forEach(function (file) {
                 const result =
-                    `<link rel="stylesheet" href="http://192.168.0.18/css/${file}">`;
+                    `<link rel="stylesheet" href="https://kaipc:8000/css/${file}">`;
                 $("head").append(result);
             });
             console.log("Removed Common.css link");
@@ -43,10 +44,8 @@
     const TabsMediaQuery = window.matchMedia('(max-width: 800px)');
     TabsMediaQuery.onchange = (query) => {
         if (query.matches) {
-            console.log("owo");
             ViewHistoryTab.appendTo(MoreTabList)
             WatchTab.appendTo(MoreTabList)
-
         }
         else {
             ViewHistoryTab.appendTo(RightNavigation)

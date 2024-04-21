@@ -37,34 +37,6 @@
     --theme-link-user-administrator-color: oklch(80% 0.25 285);
     --theme-link-user-administrator-textshadow: 0px 0px 6px oklch(20% 0.25 280);
 
-    @media (prefers-color-scheme: light) {
-        --theme-link-font-weight: 600;
-        /*====[ Link Text Colors ]====================================*/
-        --theme-link-color: oklch(0.40 0.1839 193.24);
-        --theme-link-hover-color: oklch(0.40 0.1447 193);
-        --theme-link-active-color: oklch(0.40 0.16 108.43);
-        --theme-link-focus-color: var(--theme-link-active-color);
-        /*====[ Visited Link Text Colors ]============================*/
-        --theme-link-visited-color: var(--theme-link-color);
-        --theme-link-visited-hover-color: var(--theme-link-active-color);
-        --theme-link-visited-active-color: var(--theme-link-hover-color);
-        --theme-link-visited-focus-color: var(--theme-link-focus-color);
-        /*====[ External Link Text Colors ]============================*/
-        --theme-link-external-color: oklch(0.60 0.10 152);
-        --theme-link-external-hover-color: oklch(0.60 0.25 150);
-        --theme-link-external-active-color: var(--theme-link-active-color);
-        --theme-link-external-focus-color: var(--theme-link-focus-color);
-        --theme-link-external-visited-color: var(--theme-link-external-color);
-        --theme-link-external-visited-hover-color: var(--theme-link-external-hover-color);
-        --theme-link-external-visited-active-color: var(--theme-link-external-active-color);
-        --theme-link-external-visited-focus-color: var(--theme-link-external-focus-color);
-        /*====[ New Page Link Text Colors ]============================*/
-        --theme-link-new-color: oklch(0.55 0.15 19.69);
-        --theme-link-new-hover-color: oklch(0.55 0.25 19.69);
-        --theme-link-new-active-color: var(--theme-link-active-color);
-        --theme-link-new-focus-color: var(--theme-link-focus-color);
-        --theme-link-new-visited-color: var(--theme-link-new-color);
-    }
 }
 
 .tooltip {

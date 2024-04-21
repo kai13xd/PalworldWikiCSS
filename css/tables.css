@@ -20,24 +20,7 @@
     --theme-table-border-radius: 8px;
     --theme-table-box-shadow: var(--theme-box-shadow);
 
-    @media (prefers-color-scheme: light) {
-        /*====[ Table Colors ]=======================================*/
-        --theme-table-color: var(--theme-accent-color-80);
-        --theme-table-hovered-color: var(--theme-accent-color-75);
-        --theme-table-data-hovered-color: var(--theme-accent-color-80);
-        --theme-table-column-border-color: var(--theme-table-color);
-        /*====[ Header ]=============================================*/
-        --theme-table-header-color: var(--theme-table-color);
-        --theme-table-header-hovered-color: var(--theme-accent-color-60);
-        /*====[ Row ]================================================*/
-        --theme-table-row-color: var(--theme-accent-color-75);
-        --theme-table-row-hovered-color: var(--theme-table-hovered-color);
-        /*====[ Alt Row ]============================================*/
-        --theme-table-altrow-color: var(--theme-accent-color-70);
-        --theme-table-altrow-hovered-color: var(--theme-table-hovered-color);
-        --theme-table-border-radius: 8px;
-        --theme-table-box-shadow: var(--theme-box-shadow);
-    }
+  
 }
 
 .wikitable:has(.mw-collapsed) {

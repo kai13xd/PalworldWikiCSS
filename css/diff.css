@@ -15,7 +15,7 @@
     --theme-color-red-40: oklch(40% 0.1806 var(--theme-red-color-hue));
     --theme-color-red-30: oklch(30% 0.1349 var(--theme-red-color-hue));
     /*====[ Diff Colors ]===================================================*/
-    --theme-diff-background-color: var(--theme-accent-color-25);
+    --theme-diff-background-color: var(--theme-accent-color-200);
     --theme-diff-added-color: var(--theme-color-green-60);
     --theme-diff-added-change-color: var(--theme-color-green-70);
     --theme-diff-deleted-color: var(--theme-color-red-60);

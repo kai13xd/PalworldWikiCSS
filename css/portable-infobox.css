@@ -13,7 +13,7 @@
 }
 
 .pi-group {
-    background-color: var(--theme-accent-color-25);
+    background-color: var(--theme-accent-color-200);
     /* border: 0; */
     border-radius: var(--theme-border-radius-inner);
     margin: 1rem;
@@ -29,14 +29,14 @@
         background-size: contain;
         background-blend-mode: overlay;
         border-radius: var(--theme-border-radius-inner) var(--theme-border-radius-inner) 0 0;
-        /* border: 2px solid var(--theme-accent-color-60); */
-        text-shadow: 1px 1px 2px var(--theme-accent-color-60), 1px -1px 2px var(--theme-accent-color-60), -1px 1px 2px var(--theme-accent-color-60), -1px -1px 2px var(--theme-accent-color-60);
+        /* border: 2px solid var(--theme-accent-color-600); */
+        text-shadow: 1px 1px 2px var(--theme-accent-color-600), 1px -1px 2px var(--theme-accent-color-600), -1px 1px 2px var(--theme-accent-color-600), -1px -1px 2px var(--theme-accent-color-600);
     }
 
     .pi-section-tab,
     .pi-tab-link {
         border-color: var(--theme-border-color);
-        background-color: var(--theme-accent-color-25);
+        background-color: var(--theme-accent-color-200);
 
         &:first-child {
             border-top-left-radius: var(--theme-border-radius-inner);
@@ -49,15 +49,15 @@
         }
 
         &:hover {
-            background-color: var(--theme-accent-color-35);
+            background-color: var(--theme-accent-color-300);
         }
 
         &.pi-section-active,
         &.current {
-            background-color: var(--theme-accent-color-45);
+            background-color: var(--theme-accent-color-400);
 
             &:hover {
-                background-color: var(--theme-accent-color-50);
+                background-color: var(--theme-accent-color-500);
             }
         }
     }
@@ -102,7 +102,7 @@
     }
 
     .pi-data {
-        background-color: var(--theme-accent-color-30);
+        background-color: var(--theme-accent-color-300);
         justify-content: space-between;
 
         &:last-child {

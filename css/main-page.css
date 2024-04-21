@@ -223,12 +223,12 @@
     font-size: 0.9375rem;
 
     &:not(.fplink-plain) {
-        background: var(--theme-accent-color-30);
+        background: var(--theme-accent-color-400);
         border-radius: var(--theme-border-radius-inner);
     }
 
     &:hover {
-        background-color: var(--theme-accent-color-35);
+        background-color: var(--theme-accent-color-500);
     }
 
     a {

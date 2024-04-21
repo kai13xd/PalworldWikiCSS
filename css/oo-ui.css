@@ -3,11 +3,9 @@
         None
 ========================================================================================*/
 :root {
-    --ooui-header-color: var(--theme-accent-color-40);
+    --ooui-header-color: var(--theme-accent-color-400);
 
-    @media (prefers-color-scheme:light) {
-        --ooui-header-color: var(--theme-accent-color-80);
-    }
+  
 }
 
 .oo-ui-window-content {
@@ -43,7 +41,7 @@
     .oo-ui-panelLayout {}
 
     .oo-ui-panelLayout-framed {
-        background-color: var(--theme-accent-color-25);
+        background-color: var(--theme-accent-color-200);
         /* box-shadow: 0 0 32px rgb(0, 0, 0); */
         border-radius: 8px;
     }
@@ -60,11 +58,11 @@
 }
 
 .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:nth-child(even) td {
-    background-color: var(--theme-accent-color-30);
+    background-color: var(--theme-accent-color-300);
 }
 
 .mw-htmlform-ooui .mw-htmlform-matrix tbody tr:hover td {
-    background-color: var(--theme-accent-color-40);
+    background-color: var(--theme-accent-color-400);
 }
 
 .oo-ui-menuToolGroup {
@@ -73,11 +71,11 @@
 }
 
 .oo-ui-popupToolGroup.oo-ui-popupToolGroup-active>.oo-ui-popupToolGroup-handle {
-    background-color: var(--theme-accent-color-50);
+    background-color: var(--theme-accent-color-500);
 }
 
 .oo-ui-popupToolGroup.oo-ui-popupToolGroup-active>.oo-ui-popupToolGroup-handle:hover {
-    background-color: var(--theme-accent-color-50);
+    background-color: var(--theme-accent-color-500);
 }
 
 .oo-ui-widget {
@@ -106,14 +104,14 @@
     }
 
     .mw-rcfilters-ui-menuSelectWidget-footer {
-        background-color: var(--theme-accent-color-45);
+        background-color: var(--theme-accent-color-400);
         border-top: 0;
     }
 
     &.oo-ui-widget-enabled {
         &.oo-ui-textInputWidget {
             .oo-ui-inputWidget-input {
-                background-color: var(--theme-accent-color-20);
+                background-color: var(--theme-accent-color-200);
                 color: white;
                 border: 0;
             }
@@ -124,14 +122,14 @@
             border: 0;
 
             .oo-ui-tagItemWidget.oo-ui-widget-enabled {
-                background-color: var(--theme-accent-color-55);
+                background-color: var(--theme-accent-color-500);
                 border: 0;
                 color: white;
             }
         }
 
         &.oo-ui-tagMultiselectWidget {
-            background-color: var(--theme-accent-color-40);
+            background-color: var(--theme-accent-color-400);
 
             .oo-ui-inputWidget-input {
                 border-bottom-left-radius: var(--theme-border-radius-inner);
@@ -142,7 +140,7 @@
             background-color: transparent;
 
             .oo-ui-dropdownWidget-handle {
-                background-color: var(--theme-accent-color-40);
+                background-color: var(--theme-accent-color-400);
                 border: 0;
             }
         }
@@ -151,7 +149,7 @@
             box-shadow: var(--theme-box-shadow);
 
             .oo-ui-popupWidget-popup {
-                background-color: var(--theme-accent-color-35);
+                background-color: var(--theme-accent-color-300);
                 border: 0;
                 box-shadow: var(--theme-box-shadow);
             }
@@ -172,7 +170,7 @@
 
             &.oo-ui-buttonElement-framed {
                 >.oo-ui-buttonElement-button {
-                    background-color: var(--theme-accent-color-50);
+                    background-color: var(--theme-accent-color-500);
                     box-shadow: var(--theme-button-box-shadow);
                     /* border-radius: var(--theme-button-border-radius); */
                 }
@@ -188,7 +186,7 @@
         }
 
         &.oo-ui-selectWidget {
-            background-color: var(--theme-accent-color-35);
+            background-color: var(--theme-accent-color-300);
         }
 
         &.oo-ui-tabOptionWidget {
@@ -199,7 +197,7 @@
 
             &:hover {
                 color: white;
-                background-color: var(--theme-accent-color-50);
+                background-color: var(--theme-accent-color-500);
             }
 
             .oo-ui-labelElement-label {
@@ -208,10 +206,10 @@
         }
 
         &.oo-ui-optionWidget-selected {
-            background-color: var(--theme-accent-color-50);
+            background-color: var(--theme-accent-color-500);
 
             &:hover {
-                background-color: var(--theme-accent-color-50);
+                background-color: var(--theme-accent-color-500);
 
                 .oo-ui-labelElement-label {
                     color: white;
@@ -236,32 +234,32 @@
         &.oo-ui-menuSelectWidget {
             border: 0;
             border-radius: 8px;
-            background-color: var(--theme-accent-color-35);
+            background-color: var(--theme-accent-color-300);
         }
 
         &.oo-ui-menuSectionOptionWidget {
-            background-color: var(--theme-accent-color-40);
+            background-color: var(--theme-accent-color-400);
         }
 
         &.oo-ui-flaggedElement-muted {
-            background-color: var(--theme-accent-color-30);
+            background-color: var(--theme-accent-color-300);
         }
 
         &.oo-ui-tagItemWidget {
             &.oo-ui-labelElement {
                 &.oo-ui-flaggedElement-muted {
                     &.mw-rcfilters-ui-tagItemWidget {
-                        background-color: var(--theme-accent-color-30);
+                        background-color: var(--theme-accent-color-300);
                     }
                 }
             }
         }
 
         &.oo-ui-optionWidget-highlighted {
-            background-color: var(--theme-accent-color-40);
+            background-color: var(--theme-accent-color-400);
 
             &.oo-ui-optionWidget-selected {
-                background-color: var(--theme-accent-color-45);
+                background-color: var(--theme-accent-color-500);
             }
         }
 
@@ -304,7 +302,7 @@
                 margin-left: 0;
             }
 
-            background-color: var(--theme-accent-color-30);
+            background-color: var(--theme-accent-color-200);
 
             &:has(.minoredit) {
                 /* background-color: rgb(61, 61, 61); */
@@ -410,7 +408,7 @@
 
 .mw-changeslist-line-inner-comment {
     order: 5;
-    background-color: var(--theme-accent-color-25);
+    background-color: var(--theme-accent-color-100);
     border-radius: 5px;
     text-wrap: wrap;
     padding: 0.125rem 1rem;
@@ -440,6 +438,6 @@
 }
 
 .mw-ui-input {
-    background-color: var(--theme-accent-color-20);
+    background-color: var(--theme-accent-color-200);
     color: white;
 }

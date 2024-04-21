@@ -20,6 +20,12 @@
     --codemirror-pagename-color: oklch(70% 0.1828 207.8);
     --codemirror-template-color: oklch(70% 0.1425 307.06);
     --codemirror-template-name-color: oklch(70% 0.1762 318.87);
+    --codemirror-link-color: oklch(60% 0.163 148.85);
+    --codemirror-htmltagname-color: oklch(70% 0.1674 175.26);
+    --codemirror-htmltag-color: oklch(60% 0.1674 175.26);
+    --codemirror-link-tosection-color: oklch(80% 0.163 148.85);
+    --codemirror-parserfunction-color: oklch(70% 0.2437 20.2);
+    --codemirror-list-color: oklch(70% 0.173 253.79);
 }
 
 .cm-mw-link-pagename,
@@ -28,12 +34,12 @@
 .cm-mw-extlink,
 .cm-mw-free-extlink {
     color: var(--codemirror-pagename-color);
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .cm-mw-template {
     color: var(--codemirror-template-color);
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .cm-mw-template-name,
@@ -41,18 +47,24 @@
 .cm-mw-template-delimiter,
 .cm-mw-template-bracket {
     color: var(--codemirror-template-name-color);
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .cm-mw-link,
 .cm-mw-section-header {
-    color: oklch(60% 0.163 148.85);
+    color: var(--codemirror-link-color);
     font-weight: normal;
 }
 
 .cm-mw-link-tosection,
 .cm-null {
-    color: oklch(80% 0.163 148.85);
+    color: var(--codemirror-link-tosection-color);
+    font-weight: 800;
+}
+
+.cm-mw-exttag-name,
+.cm-mw-htmltag-name {
+    color: var(--codemirror-htmltagname-color);
     font-weight: 800;
 }
 
@@ -60,49 +72,44 @@
 .cm-mw-exttag-attribute,
 .cm-mw-htmltag-bracket,
 .cm-mw-htmltag-attribute {
-    color: oklch(70% 0.1674 175.26);
-    font-weight: 800;
+    color: var(--codemirror-htmltag-color);
+    font-weight: 500;
 }
 
 .cm-mw-list,
 .cm-mw-indenting {
-    color: oklch(70% 0.173 253.79);
+    color: var(--codemirror-list-color);
     font-weight: bold;
-}
-
-.cm-mw-exttag-name,
-.cm-mw-htmltag-name {
-    color: oklch(70% 0.1674 175.26);
 }
 
 .cm-mw-doubleUnderscore,
 .cm-mw-signature,
 .cm-mw-hr {
     color: oklch(80% 0.1114 197.09);
-    font-weight: 900;
+    font-weight: 800;
     background-color: #0000;
 }
 
 .cm-mw-parserfunction-name,
 .cm-mw-parserfunction-bracket,
 .cm-mw-parserfunction-delimiter {
-    color: oklch(70% 0.2437 20.2);
+    color: var(--codemirror-parserfunction-color);
     font-weight: bold;
 }
 
 .wikiEditor-ui .CodeMirror {
-    background-color: var(--theme-accent-color-20);
+    background-color: var(--theme-accent-color-200);
     color: var(--theme-text-color);
     font-size: 1rem !important;
     padding: 0;
 }
 
 .wikiEditor-ui-toolbar {
-    background-color: var(--theme-accent-color-35);
+    background-color: var(--theme-accent-color-400);
 }
 
 #msupload-div {
-    background-color: var(--theme-accent-color-30);
+    background-color: var(--theme-accent-color-300);
     border-top: 0;
 }
 
@@ -117,7 +124,7 @@
 
 .wikiEditor-ui-toolbar .sections .section {
     border-top: 0;
-    background-color: var(--theme-accent-color-35);
+    background-color: var(--theme-accent-color-400);
 }
 
 #editform>.editOptions {
@@ -125,7 +132,7 @@
     border-radius: var(--theme-border-radius-inner);
     color: #fff;
     margin-top: 2em;
-    background-color: var(--theme-accent-color-40);
+    background-color: var(--theme-accent-color-400);
 }
 
 #editform {
@@ -137,14 +144,14 @@
 }
 
 .CodeMirror-gutters {
-    background-color: var(--theme-accent-color-25);
+    background-color: var(--theme-accent-color-200);
     border-right: 0;
 }
 
 div.CodeMirror-gutter-elt {}
 
 .wikiEditor-ui-toolbar .booklet>.index>.current {
-    background-color: var(--theme-accent-color-45);
+    background-color: var(--theme-accent-color-400);
 }
 
 .wikiEditor-ui-toolbar .page-table th {

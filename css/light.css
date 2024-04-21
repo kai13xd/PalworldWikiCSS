@@ -1,0 +1,84 @@
+@media (prefers-color-scheme: light) {
+    :root {
+        --theme-accent-color-hue: 222.39;
+        --theme-accent-color-1000: oklch(92.5% 0.07 var(--theme-accent-color-hue));
+        --theme-accent-color-900: oklch(90% 0.07 var(--theme-accent-color-hue));
+        --theme-accent-color-800: oklch(87.5% 0.07 var(--theme-accent-color-hue));
+        --theme-accent-color-700: oklch(85% 0.07 var(--theme-accent-color-hue));
+        --theme-accent-color-600: oklch(82.5% 0.07 var(--theme-accent-color-hue));
+        --theme-accent-color-500: oklch(80% 0.07 var(--theme-accent-color-hue));
+        --theme-accent-color-400: oklch(77.5% 0.07 var(--theme-accent-color-hue));
+        --theme-accent-color-300: oklch(75% 0.07 var(--theme-accent-color-hue));
+        --theme-accent-color-200: oklch(72.5% 0.07 var(--theme-accent-color-hue));
+        --theme-accent-color-100: oklch(70% 0.07 var(--theme-accent-color-hue));
+        /*====[ Text Colors ]===============================================*/
+        --theme-text-color: oklch(20% 0.13 195);
+        --theme-text-muted-color: oklch(30% 0 0);
+        --theme-text-disabled-color: oklch(30% 0 0);
+        --theme-text-color-note: oklch(30% 0 0);
+        --theme-text-color-em: oklch(30% 0 0);
+        --theme-text-selection-color: oklch(30% 0.11 202);
+        --theme-text-selection-background-color: oklch(0.17 0.07 203.07/50%);
+        --theme-heading-color: oklch(30% 0.13 195);
+        --theme-content-background-color: oklch(97% 0.05 98.56/89%);
+        --theme-triangle-header-background-color: var(--theme-accent-color-500);
+        --ooui-header-color: var(--theme-accent-color-80);
+    }
+
+    :root {
+        --theme-link-font-weight: 600;
+        /*====[ Link Text Colors ]====================================*/
+        --theme-link-color: oklch(0.5 0.1839 193.24);
+        --theme-link-hover-color: oklch(0.5 0.1447 193);
+        --theme-link-active-color: oklch(0.5 0.16 108.43);
+        --theme-link-focus-color: var(--theme-link-active-color);
+        /*====[ Visited Link Text Colors ]============================*/
+        --theme-link-visited-color: var(--theme-link-color);
+        --theme-link-visited-hover-color: var(--theme-link-active-color);
+        --theme-link-visited-active-color: var(--theme-link-hover-color);
+        --theme-link-visited-focus-color: var(--theme-link-focus-color);
+        /*====[ External Link Text Colors ]============================*/
+        --theme-link-external-color: oklch(0.5 0.12 152);
+        --theme-link-external-hover-color: oklch(0.5 0.25 150);
+        --theme-link-external-active-color: var(--theme-link-active-color);
+        --theme-link-external-focus-color: var(--theme-link-focus-color);
+        --theme-link-external-visited-color: var(--theme-link-external-color);
+        --theme-link-external-visited-hover-color: var(--theme-link-external-hover-color);
+        --theme-link-external-visited-active-color: var(--theme-link-external-active-color);
+        --theme-link-external-visited-focus-color: var(--theme-link-external-focus-color);
+        /*====[ New Page Link Text Colors ]============================*/
+        --theme-link-new-color: oklch(0.55 0.15 19.69);
+        --theme-link-new-hover-color: oklch(0.55 0.25 19.69);
+        --theme-link-new-active-color: var(--theme-link-active-color);
+        --theme-link-new-focus-color: var(--theme-link-focus-color);
+        --theme-link-new-visited-color: var(--theme-link-new-color);
+        /*====[ Table Colors ]=======================================*/
+        --theme-table-color: var(--theme-accent-color-800);
+        --theme-table-hovered-color: var(--theme-accent-color-700);
+        --theme-table-data-hovered-color: var(--theme-accent-color-800);
+        --theme-table-column-border-color: var(--theme-table-color);
+        /*====[ Header ]=============================================*/
+        --theme-table-header-color: var(--theme-table-color);
+        --theme-table-header-hovered-color: var(--theme-accent-color-600);
+        /*====[ Row ]================================================*/
+        --theme-table-row-color: var(--theme-accent-color-700);
+        --theme-table-row-hovered-color: var(--theme-table-hovered-color);
+        /*====[ Alt Row ]============================================*/
+        --theme-table-altrow-color: var(--theme-accent-color-600);
+        --theme-table-altrow-hovered-color: var(--theme-table-hovered-color);
+        --theme-table-border-radius: 8px;
+        --theme-table-box-shadow: var(--theme-box-shadow);
+    }
+
+    :root {
+        --codemirror-pagename-color: oklch(40% 0.1828 207.8);
+        --codemirror-template-color: oklch(40% 0.1425 307.06);
+        --codemirror-template-name-color: oklch(40% 0.1762 318.87);
+        --codemirror-link-color: oklch(40% 0.163 148.85);
+        --codemirror-htmltagname-color: oklch(50% 0.1674 175.26);
+        --codemirror-htmltag-color: oklch(40% 0.1674 175.26);
+        --codemirror-link-tosection-color: oklch(40% 0.163 148.85);
+        --codemirror-parserfunction-color: oklch(40% 0.2437 20.2);
+        --codemirror-list-color: oklch(40% 0.173 253.79);
+    }
+}
