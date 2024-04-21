@@ -130,7 +130,7 @@
 #editform>.editOptions {
     border: 0;
     border-radius: var(--theme-border-radius-inner);
-    color: #fff;
+    color: var(--theme-text-color);
     margin-top: 2em;
     background-color: var(--theme-accent-color-400);
 }

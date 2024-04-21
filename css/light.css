@@ -22,7 +22,6 @@
         --theme-heading-color: oklch(30% 0.13 195);
         --theme-content-background-color: oklch(97% 0.05 98.56/89%);
         --theme-triangle-header-background-color: var(--theme-accent-color-500);
-        --ooui-header-color: var(--theme-accent-color-80);
     }
 
     :root {
